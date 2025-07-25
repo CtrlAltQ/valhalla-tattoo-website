@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Gallery Test</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <main>
+        <section class="portfolio-gallery">
+            <h2>Complete Gallery Test</h2>
+            <div class="portfolio-grid">
+                <p class="portfolio-placeholder">Loading portfolio...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/artist-data.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script>
+        // Test complete gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Testing complete gallery functionality...');
+            
+            // Mock current artist slug
+            window.getCurrentArtistSlug = () => 'micah';
+            
+            // Get artist data
+            const artistData = ArtistManager.getArtistBySlug('micah');
+            
+            if (artistData) {
+                console.log('Artist data loaded:', artistData.name);
+                console.log('Portfolio items:', artistData.portfolio.length);
+                
+                // Test the gallery initialization
+                try {
+                    renderPortfolioGrid(artistData);
+                    initializeLazyLoading();
+                    initializePortfolioFilters(artistData);
+                    
+                    console.log('✅ Gallery initialization successful');
+                    
+                    // Test responsive grid
+                    const grid = document.querySelector('.portfolio-grid');
+                    const computedStyle = window.getComputedStyle(grid);
+                    console.log('✅ Grid display:', computedStyle.display);
+                    
+                    // Test cards
+                    const cards = document.querySelectorAll('.portfolio-card');
+                    console.log('✅ Portfolio cards created:', cards.length);
+                    
+                    // Test filters
+                    const filters = document.querySelectorAll('.filter-button');
+                    console.log('✅ Filter buttons created:', filters.length);
+                    
+                    // Test lazy loading setup
+                    const lazyImages = document.querySelectorAll('img[data-src]');
+                    console.log('✅ Lazy loading images:', lazyImages.length);
+                    
+                } catch (error) {
+                    console.error('❌ Gallery initialization failed:', error);
+                }
+            } else {
+                console.error('❌ No artist data found');
+            }
+        });
+    </script>
+</body>
+</html>

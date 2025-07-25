@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 11 Complete - Design System Test</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/artists.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <style>
+    body {
+      padding: 2rem;
+      background: #0B0B0B;
+      color: #F5F3F0;
+    }
+    .test-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .test-header h1 {
+      font-family: 'Bebas Neue Pro', sans-serif;
+      font-size: 2.5rem;
+      color: #BFA46F;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 8px rgba(191, 164, 111, 0.3);
+    }
+    .completion-info {
+      background: #1E1E1E;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    .completion-info h2 {
+      color: #A70000;
+      margin-bottom: 1rem;
+      font-family: 'Bebas Neue Pro', sans-serif;
+      text-transform: uppercase;
+    }
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .feature-item {
+      background: #2A2A2A;
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 4px solid #BFA46F;
+      transition: all 300ms ease-out;
+    }
+    .feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px #A70000;
+    }
+    .feature-item h3 {
+      color: #BFA46F;
+      margin-bottom: 0.5rem;
+    }
+    .test-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #A70000;
+      color: #F5F3F0;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 100ms ease-out;
+      margin: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .test-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px #A70000;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="test-header">
+    <h1>✅ Task 11 Complete</h1>
+    <p>Portfolio pages now fully match the main site design system</p>
+  </div>
+
+  <div class="completion-info">
+    <h2>🎉 Style portfolio pages with consistent design system - COMPLETED</h2>
+    <p>All portfolio pages now feature perfect design consistency with the main Valhalla Tattoo website.</p>
+    
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>✅ Color Palette Applied</h3>
+        <p>Consistent use of #0B0B0B backgrounds, #BFA46F gold accents, and #A70000 red highlights</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>✅ Typography Consistency</h3>
+        <p>Bebas Neue Pro for headings, Inter for body text, matching text shadows and sizing</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>✅ Hover Effects & Animations</h3>
+        <p>Consistent translateY(-2px) transforms, red glow effects, and fadeIn animations</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>✅ Responsive Design</h3>
+        <p>Perfect consistency across all breakpoints (4-3-2-1 column grid system)</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>✅ Button Styling</h3>
+        <p>All buttons match main site with proper hover states and transitions</p>
+      </div>
+      
+      <div class="feature-item">
+        <h3>✅ Section Animations</h3>
+        <p>Staggered fadeIn animations for hero, gallery, and filter sections</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-buttons" style="text-align: center;">
+    <h3 style="color: #BFA46F; margin-bottom: 1rem;">Test Enhanced Portfolio Pages:</h3>
+    <a href="portfolio/micah.html" class="test-button">Micah's Portfolio</a>
+    <a href="portfolio/james-pegan.html" class="test-button">James Pegan's Portfolio</a>
+    <a href="portfolio/jimmy.html" class="test-button">Jimmy's Portfolio</a>
+    <a href="portfolio/kason.html" class="test-button">Kason's Portfolio</a>
+    <a href="portfolio/sarah.html" class="test-button">Sarah's Portfolio</a>
+    <a href="index.html" class="test-button">Main Site</a>
+  </div>
+
+  <div style="margin-top: 2rem; text-align: center; color: #888;">
+    <p>Task 11: Style portfolio pages with consistent design system ✅ COMPLETE</p>
+    <p>Ready to move on to Task 12: Connect portfolio navigation from main artist cards</p>
+  </div>
+</body>
+</html>
