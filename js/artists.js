@@ -1,8 +1,11 @@
 // Artist Section Interactive Features
 document.addEventListener('DOMContentLoaded', function() {
     
+    console.log('🎨 Artists.js loaded successfully');
+    
     // Validate artist data on page load
     if (typeof ArtistManager !== 'undefined') {
+        console.log('✅ ArtistManager found');
         const validationResults = ArtistManager.validateAllData();
         let hasErrors = false;
         
@@ -14,20 +17,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (!hasErrors) {
-            console.log('All artist data validated successfully');
+            console.log('✅ All artist data validated successfully');
         }
+    } else {
+        console.error('❌ ArtistManager not found - artist-data.js may not be loaded');
     }
     
     // Handle portfolio view buttons with enhanced transitions
     const portfolioButtons = document.querySelectorAll('.view-portfolio-btn');
-    portfolioButtons.forEach(button => {
+    console.log(`🔍 Found ${portfolioButtons.length} portfolio buttons`);
+    
+    portfolioButtons.forEach((button, index) => {
+        console.log(`📌 Setting up portfolio button ${index + 1}`);
         button.addEventListener('click', function(e) {
             e.stopPropagation();
+            console.log('🖱️ Portfolio button clicked!');
+            
             const artistCard = this.closest('.artist-card');
             const artistSlug = artistCard.dataset.artist;
+            console.log(`🎭 Artist slug: ${artistSlug}`);
             
             // Validate artist exists in data before navigation
             if (artistSlug && ArtistManager.getArtistBySlug(artistSlug)) {
+                console.log(`✅ Artist ${artistSlug} found in data, navigating...`);
                 // Add loading feedback
                 const originalText = this.textContent;
                 this.textContent = 'Loading...';
