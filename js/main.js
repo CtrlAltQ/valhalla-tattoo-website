@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function getArtistDisplayName(slug) {
     const artistNames = {
         'micah': 'Micah',
-        'pagen': 'Pagen',
+        'pagan': 'Pagan',
         'jimmy': 'Jimmy',
         'kason': 'Kason',
         'sarah': 'Sarah'

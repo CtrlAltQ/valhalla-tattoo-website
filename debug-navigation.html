@@ -38,7 +38,7 @@
         <h2>Step 4: Manual Navigation Test</h2>
         <p>Click these buttons to simulate the actual navigation:</p>
         <button onclick="simulatePortfolioClick('micah')">Navigate to Micah</button>
-        <button onclick="simulatePortfolioClick('pagen')">Navigate to Pagen</button>
+        <button onclick="simulatePortfolioClick('pagan')">Navigate to Pagan</button>
         <button onclick="simulatePortfolioClick('jimmy')">Navigate to Jimmy</button>
         <button onclick="simulatePortfolioClick('kason')">Navigate to Kason</button>
         <button onclick="simulatePortfolioClick('sarah')">Navigate to Sarah</button>
@@ -62,7 +62,7 @@
         function debugArtistData() {
             clearResults('artist-data-debug');
             
-            const artists = ['micah', 'pagen', 'jimmy', 'kason', 'sarah'];
+            const artists = ['micah', 'pagan', 'jimmy', 'kason', 'sarah'];
             
             // Test if ArtistManager exists
             if (typeof ArtistManager === 'undefined') {
@@ -97,7 +97,7 @@
         async function debugFileAccess() {
             clearResults('file-debug');
             
-            const artists = ['micah', 'pagen', 'jimmy', 'kason', 'sarah'];
+            const artists = ['micah', 'pagan', 'jimmy', 'kason', 'sarah'];
             
             for (const slug of artists) {
                 try {
@@ -118,7 +118,7 @@
         function debugNavigation() {
             clearResults('navigation-debug');
             
-            const artists = ['micah', 'pagen', 'jimmy', 'kason', 'sarah'];
+            const artists = ['micah', 'pagan', 'jimmy', 'kason', 'sarah'];
             
             artists.forEach(slug => {
                 // Simulate the exact logic from artists.js

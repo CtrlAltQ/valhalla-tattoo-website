@@ -177,9 +177,9 @@ const ArtistData = {
         ]
     },
     
-    pagen: {
-        slug: 'pagen',
-        name: 'Pagen',
+    pagan: {
+        slug: 'pagan',
+        name: 'Pagan',
         specialty: 'Norse Blackwork & Realism',
         experience: '10+ years',
         rating: '★★★★★',
