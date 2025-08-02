@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Filtering Test</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <main class="portfolio-main">
+    <section class="portfolio-gallery" id="portfolio-gallery">
+      <h2>Portfolio Filtering Test</h2>
+      <div class="portfolio-grid" role="grid">
+        <!-- Portfolio images will be dynamically loaded by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/artist-data.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script>
+    // Test the filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Override getCurrentArtistSlug to return 'micah' for testing
+      window.getCurrentArtistSlug = function() {
+        return 'micah';
+      };
+      
+      // Initialize portfolio with test data
+      const testArtistData = ArtistManager.getArtistBySlug('micah');
+      if (testArtistData) {
+        console.log('Testing portfolio filtering for:', testArtistData.name);
+        console.log('Portfolio items:', testArtistData.portfolio.length);
+        console.log('Unique styles:', getUniqueStyles(testArtistData.portfolio));
+        console.log('Unique tags:', getUniqueTags(testArtistData.portfolio));
+        
+        // Initialize the portfolio gallery
+        renderPortfolioGrid(testArtistData);
+        initializeLazyLoading();
+        initializePortfolioFilters(testArtistData);
+        
+        console.log('Portfolio filtering initialized successfully');
+        
+        // Test filter functionality after a short delay
+        setTimeout(() => {
+          console.log('Testing filter buttons...');
+          const filterButtons = document.querySelectorAll('.filter-button');
+          console.log('Found', filterButtons.length, 'filter buttons');
+          
+          filterButtons.forEach((button, index) => {
+            console.log(`Button ${index + 1}:`, button.textContent, 'Filter:', button.getAttribute('data-filter'));
+          });
+        }, 1000);
+        
+      } else {
+        console.error('Could not load test artist data');
+      }
+    });
+  </script>
+</body>
+</html>

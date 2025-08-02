@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Data Test</title>
+</head>
+<body>
+    <h1>Artist Data Management Test</h1>
+    <div id="test-results"></div>
+
+    <script src="js/artist-data.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script>
+        // Test the artist data management system
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultsDiv = document.getElementById('test-results');
+            let testResults = [];
+
+            // Test 1: Validate all artist data
+            console.log('=== Testing Artist Data Validation ===');
+            const validationResults = ArtistManager.validateAllData();
+            let allValid = true;
+            
+            Object.keys(validationResults).forEach(slug => {
+                if (validationResults[slug].isValid) {
+                    testResults.push(`✅ ${slug}: Valid`);
+                    console.log(`✅ ${slug}: Valid`);
+                } else {
+                    testResults.push(`❌ ${slug}: ${validationResults[slug].errors.join(', ')}`);
+                    console.error(`❌ ${slug}:`, validationResults[slug].errors);
+                    allValid = false;
+                }
+            });
+
+            // Test 2: Get artist by slug
+            console.log('\n=== Testing Artist Retrieval ===');
+            const micahData = ArtistManager.getArtistBySlug('micah');
+            if (micahData && micahData.name === 'Micah') {
+                testResults.push('✅ Artist retrieval: Success');
+                console.log('✅ Artist retrieval: Success');
+            } else {
+                testResults.push('❌ Artist retrieval: Failed');
+                console.error('❌ Artist retrieval: Failed');
+            }
+
+            // Test 3: Get portfolio data
+            console.log('\n=== Testing Portfolio Retrieval ===');
+            const micahPortfolio = ArtistManager.getArtistPortfolio('micah');
+            if (micahPortfolio && Array.isArray(micahPortfolio) && micahPortfolio.length > 0) {
+                testResults.push(`✅ Portfolio retrieval: ${micahPortfolio.length} items`);
+                console.log(`✅ Portfolio retrieval: ${micahPortfolio.length} items`);
+            } else {
+                testResults.push('❌ Portfolio retrieval: Failed');
+                console.error('❌ Portfolio retrieval: Failed');
+            }
+
+            // Test 4: Filter by style
+            console.log('\n=== Testing Style Filtering ===');
+            const traditionalPieces = ArtistManager.filterPortfolioByStyle('micah', 'Traditional');
+            if (traditionalPieces && traditionalPieces.length > 0) {
+                testResults.push(`✅ Style filtering: ${traditionalPieces.length} traditional pieces`);
+                console.log(`✅ Style filtering: ${traditionalPieces.length} traditional pieces`);
+            } else {
+                testResults.push('❌ Style filtering: Failed');
+                console.error('❌ Style filtering: Failed');
+            }
+
+            // Test 5: Get all styles
+            console.log('\n=== Testing Style Enumeration ===');
+            const allStyles = ArtistManager.getAllStyles();
+            if (allStyles && allStyles.length > 0) {
+                testResults.push(`✅ Style enumeration: ${allStyles.join(', ')}`);
+                console.log(`✅ Style enumeration:`, allStyles);
+            } else {
+                testResults.push('❌ Style enumeration: Failed');
+                console.error('❌ Style enumeration: Failed');
+            }
+
+            // Test 6: Get all tags
+            console.log('\n=== Testing Tag Enumeration ===');
+            const allTags = ArtistManager.getAllTags();
+            if (allTags && allTags.length > 0) {
+                testResults.push(`✅ Tag enumeration: ${allTags.length} unique tags`);
+                console.log(`✅ Tag enumeration:`, allTags);
+            } else {
+                testResults.push('❌ Tag enumeration: Failed');
+                console.error('❌ Tag enumeration: Failed');
+            }
+
+            // Display results in HTML
+            resultsDiv.innerHTML = `
+                <h2>Test Results</h2>
+                <ul>
+                    ${testResults.map(result => `<li>${result}</li>`).join('')}
+                </ul>
+                <h3>Overall Status: ${allValid ? '✅ All Tests Passed' : '❌ Some Tests Failed'}</h3>
+            `;
+
+            console.log('\n=== Test Summary ===');
+            console.log(allValid ? '✅ All tests passed!' : '❌ Some tests failed!');
+        });
+    </script>
+</body>
+</html>

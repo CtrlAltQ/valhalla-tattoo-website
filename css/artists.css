@@ -1,0 +1,205 @@
+/* Artist Section Styles */
+.artists-section {
+  padding: 80px 20px;
+  background: #121212;
+  color: #F5F3F0;
+}
+
+.artists-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #BFA46F;
+}
+
+.artists-section > p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  color: #ccc;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artist-card {
+  background: #1E1E1E;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 100ms ease-out;
+  cursor: pointer;
+}
+
+.artist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #A70000;
+}
+
+.artist-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 100ms ease-out;
+}
+
+.artist-card:hover .artist-image img {
+  transform: scale(1.1);
+}
+
+.artist-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+.artist-card:hover .artist-overlay {
+  opacity: 1;
+}
+
+.view-portfolio-btn {
+  background: #A70000;
+  color: #F5F3F0;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+}
+
+.view-portfolio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 6px #A70000;
+}
+
+.artist-info {
+  padding: 25px;
+}
+
+.artist-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #BFA46F;
+}
+
+.artist-specialty {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.artist-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.artist-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.experience {
+  font-size: 0.9rem;
+  color: #BFA46F;
+  font-weight: bold;
+}
+
+.rating {
+  color: #A70000;
+  font-size: 1.1rem;
+}
+
+.book-artist-btn {
+  width: 100%;
+  background: #A70000;
+  color: #F5F3F0;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+}
+
+.book-artist-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 6px #A70000;
+}
+
+.book-artist-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .artist-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .artists-section {
+    padding: 60px 15px;
+  }
+  
+  .artists-section h2 {
+    font-size: 2rem;
+  }
+  
+  .artist-image {
+    height: 200px;
+  }
+}
+
+/* Animation for cards appearing */
+.artist-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.artist-card:nth-child(1) { animation-delay: 0.1s; }
+.artist-card:nth-child(2) { animation-delay: 0.2s; }
+.artist-card:nth-child(3) { animation-delay: 0.3s; }
+.artist-card:nth-child(4) { animation-delay: 0.4s; }
+.artist-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

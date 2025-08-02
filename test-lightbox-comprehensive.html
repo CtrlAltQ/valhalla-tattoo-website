@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Lightbox Test</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/artists.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <style>
+    .test-section {
+      background: #121212;
+      padding: 2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    .test-title {
+      color: #BFA46F;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .test-instructions {
+      color: #ccc;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .test-button {
+      background: #A70000;
+      color: #F5F3F0;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0.5rem;
+      font-size: 1rem;
+    }
+    .test-button:hover {
+      background: #BFA46F;
+      color: #0B0B0B;
+    }
+  </style>
+</head>
+<body style="background: #0B0B0B; color: #F5F3F0; padding: 2rem; font-family: Inter, sans-serif;">
+  <h1 style="color: #BFA46F; text-align: center; margin-bottom: 2rem;">Lightbox Functionality Test</h1>
+  
+  <div class="test-section">
+    <h2 class="test-title">Test 1: Basic Lightbox Opening</h2>
+    <p class="test-instructions">
+      Click the button below to open the lightbox with Micah's first portfolio image.
+      Verify that the lightbox opens with the correct image and metadata.
+    </p>
+    <button class="test-button" onclick="testBasicLightbox()">Open Basic Lightbox</button>
+  </div>
+  
+  <div class="test-section">
+    <h2 class="test-title">Test 2: Keyboard Navigation</h2>
+    <p class="test-instructions">
+      Open the lightbox and test keyboard navigation:
+      <br>• ESC key should close the lightbox
+      <br>• Left arrow should go to previous image
+      <br>• Right arrow should go to next image
+      <br>• Tab should cycle through focusable elements
+    </p>
+    <button class="test-button" onclick="testKeyboardNavigation()">Test Keyboard Navigation</button>
+  </div>
+  
+  <div class="test-section">
+    <h2 class="test-title">Test 3: Touch/Swipe Navigation</h2>
+    <p class="test-instructions">
+      On touch devices, test swipe navigation:
+      <br>• Swipe left on image should go to next image
+      <br>• Swipe right on image should go to previous image
+    </p>
+    <button class="test-button" onclick="testTouchNavigation()">Test Touch Navigation</button>
+  </div>
+  
+  <div class="test-section">
+    <h2 class="test-title">Test 4: Navigation Controls</h2>
+    <p class="test-instructions">
+      Test the navigation buttons in the lightbox:
+      <br>• Previous button (‹) should work
+      <br>• Next button (›) should work
+      <br>• Close button (×) should work
+      <br>• Clicking overlay should close lightbox
+    </p>
+    <button class="test-button" onclick="testNavigationControls()">Test Navigation Controls</button>
+  </div>
+  
+  <div class="test-section">
+    <h2 class="test-title">Test 5: Multiple Artists</h2>
+    <p class="test-instructions">
+      Test lightbox with different artists' portfolios to ensure it works across all data.
+    </p>
+    <button class="test-button" onclick="testMicahPortfolio()">Test Micah</button>
+    <button class="test-button" onclick="testJamesPortfolio()">Test James</button>
+    <button class="test-button" onclick="testJimmyPortfolio()">Test Jimmy</button>
+    <button class="test-button" onclick="testKasonPortfolio()">Test Kason</button>
+    <button class="test-button" onclick="testSarahPortfolio()">Test Sarah</button>
+  </div>
+
+  <script src="js/artist-data.js"></script>
+  <script src="js/portfolio.js"></script>
+  
+  <script>
+    function testBasicLightbox() {
+      const micahData = ArtistManager.getArtistBySlug('micah');
+      if (micahData && micahData.portfolio[0]) {
+        openLightbox(micahData.portfolio[0], 'micah');
+      }
+    }
+    
+    function testKeyboardNavigation() {
+      const micahData = ArtistManager.getArtistBySlug('micah');
+      if (micahData && micahData.portfolio[0]) {
+        openLightbox(micahData.portfolio[0], 'micah');
+        alert('Lightbox opened. Now test keyboard navigation:\n• ESC to close\n• Arrow keys to navigate\n• Tab to cycle focus');
+      }
+    }
+    
+    function testTouchNavigation() {
+      const micahData = ArtistManager.getArtistBySlug('micah');
+      if (micahData && micahData.portfolio[0]) {
+        openLightbox(micahData.portfolio[0], 'micah');
+        alert('Lightbox opened. On touch devices, try swiping left/right on the image.');
+      }
+    }
+    
+    function testNavigationControls() {
+      const micahData = ArtistManager.getArtistBySlug('micah');
+      if (micahData && micahData.portfolio[0]) {
+        openLightbox(micahData.portfolio[0], 'micah');
+        alert('Lightbox opened. Test all navigation controls:\n• Previous/Next buttons\n• Close button\n• Click overlay to close');
+      }
+    }
+    
+    function testMicahPortfolio() {
+      const data = ArtistManager.getArtistBySlug('micah');
+      if (data && data.portfolio[0]) openLightbox(data.portfolio[0], 'micah');
+    }
+    
+    function testJamesPortfolio() {
+      const data = ArtistManager.getArtistBySlug('james-pegan');
+      if (data && data.portfolio[0]) openLightbox(data.portfolio[0], 'james-pegan');
+    }
+    
+    function testJimmyPortfolio() {
+      const data = ArtistManager.getArtistBySlug('jimmy');
+      if (data && data.portfolio[0]) openLightbox(data.portfolio[0], 'jimmy');
+    }
+    
+    function testKasonPortfolio() {
+      const data = ArtistManager.getArtistBySlug('kason');
+      if (data && data.portfolio[0]) openLightbox(data.portfolio[0], 'kason');
+    }
+    
+    function testSarahPortfolio() {
+      const data = ArtistManager.getArtistBySlug('sarah');
+      if (data && data.portfolio[0]) openLightbox(data.portfolio[0], 'sarah');
+    }
+    
+    // Log test results
+    console.log('Lightbox Test Suite Ready');
+    console.log('Available artists:', Object.keys(ArtistManager.getAllArtists()));
+    
+    // Test data validation
+    Object.keys(ArtistManager.getAllArtists()).forEach(slug => {
+      const artist = ArtistManager.getArtistBySlug(slug);
+      console.log(`${artist.name}: ${artist.portfolio ? artist.portfolio.length : 0} portfolio images`);
+    });
+  </script>
+</body>
+</html>
