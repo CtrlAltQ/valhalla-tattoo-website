@@ -177,7 +177,7 @@ const ArtistData = {
         ]
     },
     
-    'pagen': {
+    pagen: {
         slug: 'pagen',
         name: 'Pagen',
         specialty: 'Norse Blackwork & Realism',
