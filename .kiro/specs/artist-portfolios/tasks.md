@@ -43,7 +43,7 @@
   - _Requirements: 4.2, 4.3_
 
 - [x] 8. Create individual portfolio pages for each artist
-  - Generate HTML pages for all five artists (Micah, James Pegan, Jimmy, Kason, Sarah)
+  - Generate HTML pages for all five artists (Micah, Pagen, Jimmy, Kason, Sarah)
   - Populate each page with artist-specific data and portfolio images
   - Implement URL routing and direct page access functionality
   - _Requirements: 1.1, 1.5_

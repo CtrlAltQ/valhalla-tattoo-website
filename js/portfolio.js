@@ -552,7 +552,7 @@ function handle404Error(reason) {
                             <h3>Available Artists:</h3>
                             <div class="artist-links">
                                 <a href="micah.html">Micah</a>
-                                <a href="james-pegan.html">James Pegan</a>
+                                <a href="pagen.html">Pagen</a>
                                 <a href="jimmy.html">Jimmy</a>
                                 <a href="kason.html">Kason</a>
                                 <a href="sarah.html">Sarah</a>

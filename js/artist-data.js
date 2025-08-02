@@ -177,9 +177,9 @@ const ArtistData = {
         ]
     },
     
-    'james-pegan': {
-        slug: 'james-pegan',
-        name: 'James Pegan',
+    'pagen': {
+        slug: 'pagen',
+        name: 'Pagen',
         specialty: 'Norse Blackwork & Realism',
         experience: '10+ years',
         rating: '★★★★★',

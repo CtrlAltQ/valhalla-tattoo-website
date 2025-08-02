@@ -2,7 +2,7 @@
 
 ## Overview
 
-The artist portfolio feature will create individual portfolio pages for each of the five tattoo artists at Valhalla Tattoo (Micah, James Pegan, Jimmy, Kason, and Sarah). Each portfolio page will showcase the artist's work in a dedicated, immersive experience that maintains the existing site's dark, professional aesthetic while providing enhanced functionality for viewing tattoo work and booking appointments.
+The artist portfolio feature will create individual portfolio pages for each of the five tattoo artists at Valhalla Tattoo (Micah, Pagen, Jimmy, Kason, and Sarah). Each portfolio page will showcase the artist's work in a dedicated, immersive experience that maintains the existing site's dark, professional aesthetic while providing enhanced functionality for viewing tattoo work and booking appointments.
 
 The design will leverage the existing design system including the dark color palette (#0B0B0B background, #BFA46F gold accents, #A70000 red highlights), typography (Inter font family, Bebas Neue Pro for headers), and responsive grid layouts. The portfolio pages will feel like a natural extension of the main site while providing specialized functionality for showcasing tattoo work.
 
@@ -25,7 +25,7 @@ The design will leverage the existing design system including the dark color pal
 /
 ├── portfolio/
 │   ├── micah.html
-│   ├── james-pegan.html
+│   ├── pegan.html
 │   ├── jimmy.html
 │   ├── kason.html
 │   └── sarah.html

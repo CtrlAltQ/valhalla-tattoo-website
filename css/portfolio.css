@@ -2679,3 +2679,238 @@ body::before {
     transition: none;
   }
 }
+/* 
+Artist Social Media Section */
+.artist-social {
+  padding: 60px 20px;
+  background: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.social-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.artist-social h2 {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.artist-social > .social-container > p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all var(--transition-medium);
+  border: 1px solid transparent;
+  min-width: 250px;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 8px 25px rgba(191, 164, 111, 0.2);
+}
+
+.social-link.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-link.facebook:hover {
+  background: #1877f2;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.social-icon::before {
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.instagram-icon::before {
+  content: "📷";
+}
+
+.facebook-icon::before {
+  content: "👥";
+}
+
+.social-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.social-platform {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.social-handle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+.social-cta {
+  margin-top: 20px;
+}
+
+.social-cta p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive Design for Social Media */
+@media (max-width: 768px) {
+  .artist-social {
+    padding: 40px 15px;
+  }
+  
+  .artist-social h2 {
+    font-size: 1.8rem;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .social-link {
+    min-width: 280px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-link {
+    min-width: auto;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-icon::before {
+    font-size: 18px;
+  }
+}
+
+/* Animation for social media section */
+.artist-social {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced social link interactions */
+.social-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+/* Accessibility improvements */
+.social-link:focus {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.social-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .social-link {
+    border: 2px solid var(--text-primary);
+  }
+  
+  .social-link:hover {
+    background: var(--text-primary);
+    color: var(--primary-bg);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .social-link {
+    transition: none;
+  }
+  
+  .social-link:hover {
+    transform: none;
+  }
+  
+  .artist-social {
+    animation: none;
+    opacity: 1;
+  }
+}
