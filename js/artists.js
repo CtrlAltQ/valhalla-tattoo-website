@@ -275,8 +275,8 @@ const ArtistUtils = {
 window.ArtistUtils = ArtistUtils;
 
 // Add CSS for ripple effect and highlights
-const style = document.createElement('style');
-style.textContent = `
+const artistsStyle = document.createElement('style');
+artistsStyle.textContent = `
     .artist-card {
         position: relative;
         overflow: hidden;
@@ -418,4 +418,4 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(artistsStyle);
