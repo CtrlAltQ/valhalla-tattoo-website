@@ -187,8 +187,8 @@ const ArtistData = {
         extendedBio: 'With over a decade of experience, James has become renowned for his Norse-inspired blackwork and incredibly detailed realistic portraits. His deep knowledge of Norse mythology and symbolism allows him to create meaningful pieces that resonate with clients seeking powerful, spiritual tattoos.',
         philosophy: 'Tattooing is a sacred art form that connects us to ancient traditions. I strive to honor both the craft and the client\'s story in every piece I create.',
         socialMedia: {
-            instagram: '@jamespegan_tattoo',
-            facebook: 'james.pegan.tattoo'
+            instagram: '@thevalhallatattoo',
+            facebook: 'Valhallatattoollc'
         },
         portfolio: [
             {
