@@ -53,7 +53,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 100ms ease-out;
+}
+
+/* Better positioning for Pagan's image to show his full face */
+.artist-card[data-artist="pagan"] .artist-image img {
+  object-position: center 20%;
 }
 
 .artist-card:hover .artist-image img {
