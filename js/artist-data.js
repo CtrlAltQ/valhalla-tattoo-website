@@ -1,6 +1,21 @@
 /**
- * Artist Data Management System
- * Centralized data structure for artist information and portfolio management
+ * ========================================
+ * ARTIST DATA - PORTFOLIO & INFORMATION
+ * ========================================
+ * 
+ * This file contains all artist information and portfolio images.
+ * This is where you'll make most of your updates!
+ * 
+ * COMMON TASKS:
+ * - Add new portfolio photos → Add to artist's portfolio array
+ * - Update artist bio → Change description or extendedBio
+ * - Change artist specialty → Update specialty field
+ * - Reorder artists → Change order in ArtistData object
+ * 
+ * HOW TO ADD A NEW PORTFOLIO PHOTO:
+ * 1. Upload photo to images/portfolio/[artist-name]/
+ * 2. Add new object to artist's portfolio array (see examples below)
+ * 3. Save file and refresh website
  */
 
 // Data validation utilities
@@ -113,8 +128,94 @@ const DataValidator = {
     }
 };
 
-// Centralized artist data with extended portfolio information
+// ========================================
+// ARTIST INFORMATION & PORTFOLIOS
+// ========================================
+// 
+// Each artist has these fields you can edit:
+// - name: Display name
+// - specialty: What styles they specialize in
+// - experience: How many years of experience
+// - description: Short bio for listings
+// - extendedBio: Longer bio for their portfolio page
+// - portfolio: Array of their tattoo photos
+//
+// ARTIST ORDER: The order here determines the order on the website
+// Currently: Pagan (first), Micah, Jimmy, Kason, Sarah (last)
+
 const ArtistData = {
+    
+    // ========================================
+    // PAGAN - Lead Artist
+    // ========================================
+    pagan: {
+        slug: 'pagan',
+        name: 'Pagan',
+        specialty: 'Norse Blackwork & Realism',
+        experience: '10+ years',
+        rating: '★★★★★',
+        description: 'Master of Norse-inspired blackwork and photorealistic portraits. Creates powerful, meaningful pieces with incredible detail.',
+        extendedBio: 'With over a decade of experience, James has become renowned for his Norse-inspired blackwork and incredibly detailed realistic portraits. His deep knowledge of Norse mythology and symbolism allows him to create meaningful pieces that resonate with clients seeking powerful, spiritual tattoos.',
+        philosophy: 'Tattooing is a sacred art form that connects us to ancient traditions. I strive to honor both the craft and the client\'s story in every piece I create.',
+        socialMedia: {
+            instagram: '@thevalhallatattoo',
+            facebook: 'Valhallatattoollc'
+        },
+        
+        // PORTFOLIO PHOTOS - Add new tattoos here
+        // Each photo needs these fields:
+        // - id: Unique number (use next number in sequence)  
+        // - filename: Photo filename (must match file in images/portfolio/pagan/)
+        // - title: Descriptive title for the tattoo
+        // - style: Art style (Traditional, Realism, Blackwork, etc.)
+        // - placement: Body location (Back, Arm, Chest, etc.)  
+        // - sessionTime: How long the tattoo took
+        // - description: Description of the tattoo
+        // - tags: Array of keywords for filtering ['norse', 'blackwork', etc.]
+        // - isHealed: true if photo shows healed tattoo, false if fresh
+        
+        portfolio: [
+            // EXAMPLE: Copy this structure to add new photos
+            {
+                id: 1,
+                filename: 'norse-raven.jpg',
+                title: 'Odin\'s Ravens',
+                style: 'Blackwork',
+                placement: 'Back',
+                sessionTime: '8 hours',
+                description: 'Detailed Norse ravens representing Huginn and Muninn with intricate knotwork',
+                tags: ['norse', 'blackwork', 'ravens', 'mythology'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'realistic-portrait.jpg',
+                title: 'Memorial Portrait',
+                style: 'Realism',
+                placement: 'Chest',
+                sessionTime: '10 hours',
+                description: 'Photorealistic memorial portrait with incredible detail and emotion',
+                tags: ['portrait', 'realism', 'memorial'],
+                isHealed: true
+            },
+            {
+                id: 3,
+                filename: 'scar-coverup-after.jpg',
+                title: 'Scar Cover-up',
+                style: 'Blackwork',
+                placement: 'Upper Arm',
+                sessionTime: '6 hours',
+                description: 'Artistic blackwork design covering surgical scars with Norse-inspired patterns',
+                tags: ['blackwork', 'coverup', 'norse', 'healing'],
+                beforeImage: 'scar-coverup-before.jpg',
+                isHealed: true
+            }
+        ]
+    },
+    
+    // ========================================
+    // MICAH - Traditional & Black & Grey
+    // ========================================
     micah: {
         slug: 'micah',
         name: 'Micah',
@@ -177,57 +278,9 @@ const ArtistData = {
         ]
     },
     
-    pagan: {
-        slug: 'pagan',
-        name: 'Pagan',
-        specialty: 'Norse Blackwork & Realism',
-        experience: '10+ years',
-        rating: '★★★★★',
-        description: 'Master of Norse-inspired blackwork and photorealistic portraits. Creates powerful, meaningful pieces with incredible detail.',
-        extendedBio: 'With over a decade of experience, James has become renowned for his Norse-inspired blackwork and incredibly detailed realistic portraits. His deep knowledge of Norse mythology and symbolism allows him to create meaningful pieces that resonate with clients seeking powerful, spiritual tattoos.',
-        philosophy: 'Tattooing is a sacred art form that connects us to ancient traditions. I strive to honor both the craft and the client\'s story in every piece I create.',
-        socialMedia: {
-            instagram: '@thevalhallatattoo',
-            facebook: 'Valhallatattoollc'
-        },
-        portfolio: [
-            {
-                id: 1,
-                filename: 'norse-raven.jpg',
-                title: 'Odin\'s Ravens',
-                style: 'Blackwork',
-                placement: 'Back',
-                sessionTime: '8 hours',
-                description: 'Detailed Norse ravens representing Huginn and Muninn with intricate knotwork',
-                tags: ['norse', 'blackwork', 'ravens', 'mythology'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'realistic-portrait.jpg',
-                title: 'Memorial Portrait',
-                style: 'Realism',
-                placement: 'Chest',
-                sessionTime: '10 hours',
-                description: 'Photorealistic memorial portrait with incredible detail and emotion',
-                tags: ['portrait', 'realism', 'memorial'],
-                isHealed: true
-            },
-            {
-                id: 3,
-                filename: 'scar-coverup-after.jpg',
-                title: 'Scar Cover-up',
-                style: 'Blackwork',
-                placement: 'Upper Arm',
-                sessionTime: '6 hours',
-                description: 'Artistic blackwork design covering surgical scars with Norse-inspired patterns',
-                tags: ['blackwork', 'coverup', 'norse', 'healing'],
-                beforeImage: 'scar-coverup-before.jpg',
-                isHealed: true
-            }
-        ]
-    },
-    
+    // ========================================
+    // JIMMY - Illustrative & Neo-Traditional
+    // ========================================
     jimmy: {
         slug: 'jimmy',
         name: 'Jimmy',
@@ -279,6 +332,9 @@ const ArtistData = {
         ]
     },
     
+    // ========================================
+    // KASON - Fineline & Minimalist  
+    // ========================================
     kason: {
         slug: 'kason',
         name: 'Kason',
@@ -318,6 +374,9 @@ const ArtistData = {
         ]
     },
     
+    // ========================================
+    // SARAH - Creative & Elegant
+    // ========================================
     sarah: {
         slug: 'sarah',
         name: 'Sarah',

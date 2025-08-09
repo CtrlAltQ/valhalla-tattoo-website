@@ -10,6 +10,11 @@
     content="tattoo, Valhalla Tattoo, Spring Hill TN, custom tattoos, Norse tattoos, professional tattoo studio">
   <meta name="author" content="Valhalla Tattoo">
   <title>Valhalla Tattoo - Professional Tattoo Studio in Spring Hill, TN</title>
+  <!-- Google Fonts for Hero Title -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/artists.css">
@@ -33,8 +38,8 @@
         </li>
       </ul>
       <ul class="nav-right">
-        <li class="logo"><a href="#main"><img src="images/logo.jpg" alt="Valhalla Tattoo Logo"></a></li>
         <li><a href="#book" class="btn-cta">Book Now</a></li>
+        <li class="logo"><a href="#main"><img src="images/logo.jpg" alt="Valhalla Tattoo Logo"></a></li>
       </ul>
     </div>
   </nav>
@@ -45,6 +50,16 @@
       <source src="images/videos/hero.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    
+    <!-- Main Studio Title -->
+    <div class="hero-title">
+      <h1 class="studio-name">
+        <span class="studio-name-main">VALHALLA</span>
+        <span class="studio-name-sub">TATTOO</span>
+      </h1>
+      <div class="title-accent-line"></div>
+    </div>
+    
     <div class="hero-content">
       <h1>Professional tattoos.<br>Trusted artists.</h1>
       <p>Expert tattooing by four skilled artists in a clean, professional studio.<br>Book your appointment or browse
@@ -234,13 +249,13 @@
         <div class="contact-item">
           <span class="icon location-icon"></span>
           <strong>Location</strong>
-          <p>101 Web Lane, Spring Hill, TN</p>
+          <p>3312 Kedron Rd, Spring Hill, TN 37174</p>
         </div>
         
         <div class="consultation-info">
           <h4>What to Expect:</h4>
           <ul>
-            <li>Free 30-minute consultation</li>
+            <li>Free consultation</li>
             <li>Design discussion & planning</li>
             <li>Pricing estimate</li>
             <li>Scheduling your tattoo session</li>
@@ -327,6 +342,33 @@
         </ul>
       </div>
     </div>
+    
+    <!-- Newsletter Signup -->
+    <div class="newsletter-section">
+      <div class="newsletter-content">
+        <h3>Stay Connected</h3>
+        <p>Get updates on new artists, events, and special offers</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <div class="newsletter-input-group">
+            <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn-newsletter">
+              <span class="btn-text">Subscribe</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <div class="newsletter-privacy">
+            <small>We respect your privacy. Unsubscribe at any time.</small>
+          </div>
+        </form>
+        <div class="newsletter-success" id="newsletter-success" style="display: none;">
+          <p>✓ Thank you! You're subscribed to our mailing list.</p>
+        </div>
+        <div class="newsletter-error" id="newsletter-error" style="display: none;">
+          <p>⚠ Please try again or contact us directly.</p>
+        </div>
+      </div>
+    </div>
+    
     <div class="footer-bottom">
       <a href="#book" class="btn-cta">Book</a>
       <div class="social-icons">
@@ -340,6 +382,8 @@
     </div>
   </footer>
 
+  <!-- Website configuration - load first -->
+  <script src="js/config.js"></script>
   <script src="js/artist-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/artists.js"></script>

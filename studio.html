@@ -47,47 +47,55 @@
     </div>
   </header>
 
+  <!-- Blog Controls -->
+  <section class="blog-controls">
+    <div class="container">
+      <div class="blog-controls-grid">
+        <!-- Search -->
+        <div class="blog-search">
+          <input type="text" id="blog-search" placeholder="Search posts..." aria-label="Search blog posts">
+          <button class="search-btn" aria-label="Search">🔍</button>
+        </div>
+        
+        <!-- Category Filter -->
+        <div class="blog-categories">
+          <label for="category-filter">Filter by category:</label>
+          <select id="category-filter" aria-label="Filter posts by category">
+            <!-- Categories will be populated by JavaScript -->
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Studio News Timeline -->
   <section class="news-timeline-section">
     <div class="container">
       <h2>Studio Timeline</h2>
-      <div class="timeline">
-        
-        <!-- News Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">Aug 2, 2025</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Yay! We Have a New Website!</h3>
-            <p>We're excited to launch our brand new website! Now you can easily browse our artists' portfolios, stay updated with studio news, and book your next tattoo appointment all in one place.</p>
-            <div class="timeline-tags">
-              <span class="tag">Website Launch</span>
-              <span class="tag">Studio News</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- News Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-date">
-            <span class="date">Aug 1, 2025</span>
-          </div>
-          <div class="timeline-content">
-            <h3>Thank You for the School Supplies Drive!</h3>
-            <p>A huge thank you to everyone who contributed to our school supplies drive! Your generosity helped local students start the new semester with everything they need. Community support like this is what makes Valhalla Tattoo special.</p>
-            <div class="timeline-tags">
-              <span class="tag">Community</span>
-              <span class="tag">School Supplies</span>
-            </div>
-          </div>
-        </div>
-
+      
+      <!-- Loading State -->
+      <div id="blog-loading" class="blog-loading" style="display: none;">
+        <p>Loading posts...</p>
+      </div>
+      
+      <!-- No Results -->
+      <div id="no-results" class="no-results" style="display: none;">
+        <p>No posts found. Try a different search term or category.</p>
+      </div>
+      
+      <!-- Blog Posts Container - Posts will be loaded by JavaScript -->
+      <div class="timeline" id="blog-posts-container">
+        <!-- Posts dynamically loaded here -->
       </div>
 
-      <!-- Load More Button -->
-      <div class="timeline-footer">
-        <button class="btn-outline load-more-btn">Load More Updates</button>
+      <!-- Pagination Controls -->
+      <div class="timeline-footer" id="pagination-controls">
+        <button class="btn-outline load-more-btn" id="load-more-btn" style="display: none;">
+          Load More Posts
+        </button>
+        <div class="pagination-info" id="pagination-info" style="display: none;">
+          <span>Showing <span id="posts-count">0</span> posts</span>
+        </div>
       </div>
     </div>
   </section>
@@ -138,7 +146,7 @@
       <div class="studio-info-grid">
         <div class="info-card">
           <h3>Studio Location</h3>
-          <p>101 Web Lane<br>Spring Hill, TN</p>
+          <p>3312 Kedron Rd<br>Spring Hill, TN 37174</p>
           <a href="index.html#contact" class="btn-outline">Get Directions</a>
         </div>
         <div class="info-card">
@@ -194,6 +202,33 @@
         </ul>
       </div>
     </div>
+    
+    <!-- Newsletter Signup -->
+    <div class="newsletter-section">
+      <div class="newsletter-content">
+        <h3>Stay Connected</h3>
+        <p>Get updates on new artists, events, and special offers</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <div class="newsletter-input-group">
+            <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address" required>
+            <button type="submit" class="btn-newsletter">
+              <span class="btn-text">Subscribe</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <div class="newsletter-privacy">
+            <small>We respect your privacy. Unsubscribe at any time.</small>
+          </div>
+        </form>
+        <div class="newsletter-success" id="newsletter-success" style="display: none;">
+          <p>✓ Thank you! You're subscribed to our mailing list.</p>
+        </div>
+        <div class="newsletter-error" id="newsletter-error" style="display: none;">
+          <p>⚠ Please try again or contact us directly.</p>
+        </div>
+      </div>
+    </div>
+    
     <div class="footer-bottom">
       <a href="index.html#book" class="btn-cta">Book</a>
       <div class="social-icons">
@@ -207,6 +242,9 @@
     </div>
   </footer>
 
+  <!-- Website configuration - load first -->
+  <script src="js/config.js"></script>
+  <script src="js/blog-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/studio.js"></script>
 </body>

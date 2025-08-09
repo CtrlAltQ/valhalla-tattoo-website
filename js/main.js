@@ -293,3 +293,153 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ========================================
+// NEWSLETTER SIGNUP FUNCTIONALITY
+// ========================================
+// 
+// This handles the mailing list signup form in the footer.
+// 
+// TO SET UP MAILERLITE:
+// 1. Get your MailerLite API key from your account
+// 2. Find the "handleNewsletterSignup" function below (around line 380)
+// 3. Uncomment the MailerLite integration code (remove /* and */)
+// 4. Replace "YOUR_MAILERLITE_API_KEY" with your real API key
+// 5. Test the signup form on your website
+
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.getElementById('newsletter-form');
+    const emailInput = document.getElementById('newsletter-email');
+    const successMessage = document.getElementById('newsletter-success');
+    const errorMessage = document.getElementById('newsletter-error');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            // Basic email validation
+            if (!isValidEmail(email)) {
+                showNewsletterMessage('error', 'Please enter a valid email address.');
+                return;
+            }
+            
+            // Disable form during submission
+            const submitButton = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.querySelector('.btn-text').textContent;
+            submitButton.disabled = true;
+            submitButton.querySelector('.btn-text').textContent = 'Subscribing...';
+            
+            // TODO: Replace this with actual MailerLite integration
+            // MailerLite integration will go here
+            handleNewsletterSignup(email)
+                .then(success => {
+                    if (success) {
+                        showNewsletterMessage('success', '✓ Thank you! You\'re subscribed to our mailing list.');
+                        newsletterForm.reset();
+                    } else {
+                        showNewsletterMessage('error', '⚠ Please try again or contact us directly.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Newsletter signup error:', error);
+                    showNewsletterMessage('error', '⚠ Please try again or contact us directly.');
+                })
+                .finally(() => {
+                    // Re-enable form
+                    submitButton.disabled = false;
+                    submitButton.querySelector('.btn-text').textContent = originalText;
+                });
+        });
+    }
+    
+    /**
+     * Validate email format
+     * @param {string} email - Email address to validate
+     * @returns {boolean} - True if valid email format
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    /**
+     * Show newsletter success/error message
+     * @param {string} type - 'success' or 'error'
+     * @param {string} message - Message text
+     */
+    function showNewsletterMessage(type, message) {
+        // Hide both messages first
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+        
+        if (type === 'success') {
+            successMessage.querySelector('p').textContent = message;
+            successMessage.style.display = 'block';
+        } else if (type === 'error') {
+            errorMessage.querySelector('p').textContent = message;
+            errorMessage.style.display = 'block';
+        }
+        
+        // Auto-hide messages after 5 seconds
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+        }, 5000);
+    }
+    
+    /**
+     * Handle newsletter signup - placeholder for MailerLite integration
+     * @param {string} email - Email address to subscribe
+     * @returns {Promise<boolean>} - Success status
+     */
+    async function handleNewsletterSignup(email) {
+        // TODO: Replace with actual MailerLite API call
+        // For now, simulate API call
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                // Simulate successful signup for demo purposes
+                console.log('Newsletter signup for:', email);
+                // Store email temporarily in localStorage for demo
+                const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
+                subscribers.push({
+                    email: email,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+                resolve(true);
+            }, 1000);
+        });
+        
+        /* 
+        // MAILERLITE INTEGRATION TEMPLATE - Uncomment and configure when ready
+        try {
+            const response = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-MailerLite-ApiKey': 'YOUR_MAILERLITE_API_KEY' // Replace with actual API key
+                },
+                body: JSON.stringify({
+                    email: email,
+                    fields: {
+                        // Add custom fields if needed
+                        source: 'website_footer'
+                    }
+                })
+            });
+            
+            if (response.ok) {
+                return true;
+            } else {
+                console.error('MailerLite API error:', response.status);
+                return false;
+            }
+        } catch (error) {
+            console.error('MailerLite signup error:', error);
+            return false;
+        }
+        */
+    }
+});
