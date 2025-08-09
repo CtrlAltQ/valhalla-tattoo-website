@@ -378,6 +378,92 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize social feeds
     initializeSocialFeeds();
+    
+    // ========================================
+    // STUDIO CAROUSEL FUNCTIONALITY
+    // ========================================
+    
+    initializeStudioCarousel();
+    
+    /**
+     * Initialize the studio photo carousel
+     */
+    function initializeStudioCarousel() {
+        const carousel = document.querySelector('.studio-carousel');
+        if (!carousel) return;
+        
+        const slides = carousel.querySelectorAll('.studio-slide');
+        const dots = carousel.querySelectorAll('.dot');
+        const prevBtn = carousel.querySelector('.carousel-btn-prev');
+        const nextBtn = carousel.querySelector('.carousel-btn-next');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Show initial slide
+        showSlide(currentSlide);
+        
+        // Previous button
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            });
+        }
+        
+        // Next button
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            });
+        }
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        /**
+         * Show specific slide and update indicators
+         * @param {number} slideIndex - Index of slide to show
+         */
+        function showSlide(slideIndex) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Show current slide
+            slides[slideIndex].classList.add('active');
+            
+            // Update dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            dots[slideIndex].classList.add('active');
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            } else if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+        });
+    }
 });
 
 // ========================================

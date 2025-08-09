@@ -46,6 +46,154 @@
   margin-bottom: 0;
 }
 
+/* Studio Showcase Section */
+.studio-showcase-section {
+  background: #0B0B0B;
+  color: #F5F3F0;
+  padding: 80px 0;
+}
+
+.studio-showcase-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #BFA46F;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.studio-showcase-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #F5F3F0;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Studio Carousel */
+.studio-carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.studio-carousel {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(191, 164, 111, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.studio-slide {
+  min-width: 100%;
+  display: none;
+}
+
+.studio-slide.active {
+  display: block;
+}
+
+.studio-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navigation buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(191, 164, 111, 0.8);
+  border: none;
+  color: #0B0B0B;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(191, 164, 111, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+  left: 15px;
+}
+
+.carousel-btn-next {
+  right: 15px;
+}
+
+/* Dots indicator */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0;
+  background: #0B0B0B;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #BFA46F;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #BFA46F;
+}
+
+.dot:hover {
+  background: rgba(191, 164, 111, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .studio-carousel-container {
+    padding: 0 15px;
+  }
+  
+  .studio-slide img {
+    height: 300px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .carousel-btn-prev {
+    left: 10px;
+  }
+  
+  .carousel-btn-next {
+    right: 10px;
+  }
+  
+  .studio-showcase-section h2 {
+    font-size: 2rem;
+  }
+}
+
 /* Container */
 .container {
   max-width: 1200px;
