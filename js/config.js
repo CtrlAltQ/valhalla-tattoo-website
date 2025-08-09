@@ -15,7 +15,7 @@ const WebsiteConfig = {
     studioInfo: {
         name: "Valhalla Tattoo",
         address: {
-            street: "3312 Kedron Rd",
+            street: "404 McLemor Ave, Ste 4",
             city: "Spring Hill",
             state: "TN", 
             zip: "37174",
@@ -28,7 +28,7 @@ const WebsiteConfig = {
                 return `${this.street}<br>${this.city}, ${this.state} ${this.zip}`;
             }
         },
-        phone: "+1 (555) 123-4567",
+        phone: "931-451-5313",
         hours: "Mon–Fri, 8am–5pm",
         email: "info@valhallatattoo.com" // Update this with real email
     },

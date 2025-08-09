@@ -443,3 +443,70 @@ document.addEventListener('DOMContentLoaded', function() {
         */
     }
 });
+
+// ========================================
+// STUDIO SLIDER FUNCTIONALITY
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.studio-slider');
+    const slides = document.querySelectorAll('.studio-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (!slider || slides.length === 0) return;
+    
+    let currentSlide = 0;
+    
+    // Function to show a specific slide
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+    
+    // Function to go to next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Function to go to previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Add event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+    
+    // Add event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+});

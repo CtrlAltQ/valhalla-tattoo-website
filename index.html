@@ -95,15 +95,22 @@
       <h2>Our Professional Environment</h2>
       <p>Step inside our clean, welcoming studio where artistry meets professionalism</p>
       
-      <div class="studio-preview-grid">
-        <div class="studio-preview-item">
-          <img src="images/studio/studio1.jpg" alt="Clean professional tattoo studio" loading="lazy">
+      <div class="studio-slider-container">
+        <div class="studio-slider">
+          <div class="studio-slide active">
+            <img src="images/studio/studio1.jpg" alt="Clean professional tattoo studio" loading="lazy">
+          </div>
+          <div class="studio-slide">
+            <img src="images/studio/studio2.jpg" alt="Professional tattoo workstation" loading="lazy">
+          </div>
         </div>
-        <div class="studio-preview-item">
-          <img src="images/studio/studio2.jpg" alt="Professional tattoo workstation" loading="lazy">
-        </div>
-        <div class="studio-preview-item">
-          <img src="images/studio/studio3.jpg" alt="Sterile tattoo environment" loading="lazy">
+        
+        <button class="slider-btn prev-btn" aria-label="Previous image">&lt;</button>
+        <button class="slider-btn next-btn" aria-label="Next image">&gt;</button>
+        
+        <div class="slider-dots">
+          <button class="dot active" data-slide="0" aria-label="View image 1"></button>
+          <button class="dot" data-slide="1" aria-label="View image 2"></button>
         </div>
       </div>
       
@@ -144,22 +151,6 @@
     <h2>Meet Our Talented Artists</h2>
     <p>Browse our artists' portfolios and book your consultation to create your perfect tattoo.</p>
     <div class="artist-grid">
-      <div class="artist-card" data-artist="micah">
-        <div class="artist-image">
-          <img src="images/gallery/micah.jpg" alt="Micah - Tattoo Artist">
-          <div class="artist-overlay">
-            <button class="view-portfolio-btn">View Portfolio</button>
-          </div>
-        </div>
-        <div class="artist-info">
-          <h3>Micah</h3>
-          <div class="artist-stats">
-            <span class="rating">★★★★★</span>
-          </div>
-          <button class="book-artist-btn" data-artist="micah">Book with Micah</button>
-        </div>
-      </div>
-
       <div class="artist-card" data-artist="pagan">
         <div class="artist-image">
           <img src="images/gallery/james.jpg" alt="Pagan - Tattoo Artist">
@@ -173,6 +164,22 @@
             <span class="rating">★★★★★</span>
           </div>
           <button class="book-artist-btn" data-artist="pagan">Book with Pagan</button>
+        </div>
+      </div>
+
+      <div class="artist-card" data-artist="micah">
+        <div class="artist-image">
+          <img src="images/gallery/micah.jpg" alt="Micah - Tattoo Artist">
+          <div class="artist-overlay">
+            <button class="view-portfolio-btn">View Portfolio</button>
+          </div>
+        </div>
+        <div class="artist-info">
+          <h3>Micah</h3>
+          <div class="artist-stats">
+            <span class="rating">★★★★★</span>
+          </div>
+          <button class="book-artist-btn" data-artist="micah">Book with Micah</button>
         </div>
       </div>
 
