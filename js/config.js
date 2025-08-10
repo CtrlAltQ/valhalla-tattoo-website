@@ -95,7 +95,8 @@ const WebsiteConfig = {
         'micah', 
         'jimmy',
         'kason',
-        'sarah'     // Shows last
+        'sarah',
+        'heather'   // Shows last
     ],
 
     // ==========================================

@@ -414,6 +414,48 @@ const ArtistData = {
                 isHealed: true
             }
         ]
+    },
+    
+    // ========================================
+    // HEATHER - Creative & Detail-Oriented
+    // ========================================
+    heather: {
+        slug: 'heather',
+        name: 'Heather',
+        specialty: 'Creative & Detail-Oriented',
+        experience: '4+ years',
+        rating: '★★★★★',
+        description: 'Creative and detail-oriented tattoo artist with a passion for bringing unique designs to life.',
+        extendedBio: 'Heather brings fresh creativity and meticulous attention to detail to every piece she creates. With a growing portfolio and dedication to her craft, she specializes in creating meaningful tattoos that reflect each client\'s individual style and story.',
+        philosophy: 'Every tattoo should be as unique as the person wearing it. I take pride in working closely with clients to create something truly special.',
+        socialMedia: {
+            instagram: '@heather_valhalla',
+            facebook: 'heather.valhalla.tattoo'
+        },
+        portfolio: [
+            {
+                id: 1,
+                filename: 'creative-design.jpg',
+                title: 'Creative Original Design',
+                style: 'Illustrative',
+                placement: 'Forearm',
+                sessionTime: '4 hours',
+                description: 'Custom illustrative design with unique artistic flair',
+                tags: ['illustrative', 'custom', 'creative', 'original'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'detailed-work.jpg',
+                title: 'Detailed Linework',
+                style: 'Fineline',
+                placement: 'Wrist',
+                sessionTime: '3 hours',
+                description: 'Intricate fineline work with precise detail',
+                tags: ['fineline', 'detailed', 'precise', 'delicate'],
+                isHealed: true
+            }
+        ]
     }
 };
 

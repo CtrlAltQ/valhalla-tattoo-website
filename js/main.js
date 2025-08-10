@@ -193,7 +193,8 @@ function getArtistDisplayName(slug) {
         'pagan': 'Pagan',
         'jimmy': 'Jimmy',
         'kason': 'Kason',
-        'sarah': 'Sarah'
+        'sarah': 'Sarah',
+        'heather': 'Heather'
     };
     return artistNames[slug] || slug;
 }
