@@ -71,10 +71,10 @@ const WebsiteConfig = {
     
     newsletter: {
         // Set this to true once you've set up MailerLite
-        mailerliteEnabled: false,
+        mailerliteEnabled: true,
         
         // Your MailerLite API key goes here
-        mailerliteApiKey: "YOUR_MAILERLITE_API_KEY",
+        mailerliteApiKey: "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMDJkM2M4NjI3NTAxYjExZjE4ZjUwMDBhYWI5MTkxNzcyOWZiOTZmMzhmN2RhOWJhZjNlMzJiNzM4N2FmZjE0Y2M1MjY0MGUyMzliYmQyZTAiLCJpYXQiOjE3NTQ3ODg5MDcuMzEyOTY2LCJuYmYiOjE3NTQ3ODg5MDcuMzEyOTY4LCJleHAiOjQ5MTA0NjI1MDcuMzA5MTIyLCJzdWIiOiIxNzM5NTQ3Iiwic2NvcGVzIjpbXX0.BlFs5SqGHLtGEIUUeC6azuE1BGoillvPxXS2DJJ_b1fKM3uUMSdXSBA1tVJhhJ-xfwgp_pH2f8sltFbLqouVXT_BUFClPkcA3nlGnWQFcBo5dm813gSXiZkN7VQ08fbE3TqkkgIvW7QaYh0cestrsB5y2MivGB6iPiZx0BbVXk_kQFmLjWJ7F2zRelBYVVN0SXbPSSXtQHbfGe8ABSuQEDjftDnZtIPAPEbhOhLbP00SUP9RMBfsWM2rLF-4rSvX5MUtkF5gf33gZXiCvkHyrnYh6VRYu0tCyDOmNh1vDwj7LEqdhAHnNBZbN7iWOHvM8suQ6HW1KP0E-G-XxIpqROoXEleIcvP6gNdnKKNlG8o76HgvBLGoZeDQO-ZC4zbeOyf1Ym-fQEdiebgr8PP2FTOFYHii36au9gktwHB5ZHtikDjjoobqkYJJZNhhOYk_qjM_B6F7oeMiPz8PU2PT1_M4Tl_u_qmqBy-JAQaPefB7IO_fzBDicmsVNyZPmk6DdqvLiFBS_TcYqsurM-VPjRH_T6173p5W61ZbcVupqf4BJ63s86-_DN5e6CxdooWDHP2_k5HUSi3wc_LWvgWdtWWl8Q-hkirus5Q22whwgIAh79pKj8kH-UlSP5B02trqpe8f-1HV0ACurmjwXR0Qke8ZWgrRTodBVj-5fzRUXDk",
         
         // Newsletter signup messages
         messages: {

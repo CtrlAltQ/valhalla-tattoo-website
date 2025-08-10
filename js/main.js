@@ -391,57 +391,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     /**
-     * Handle newsletter signup - placeholder for MailerLite integration
+     * Handle newsletter signup - MailerLite integration
      * @param {string} email - Email address to subscribe
      * @returns {Promise<boolean>} - Success status
      */
     async function handleNewsletterSignup(email) {
-        // TODO: Replace with actual MailerLite API call
-        // For now, simulate API call
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                // Simulate successful signup for demo purposes
-                console.log('Newsletter signup for:', email);
-                // Store email temporarily in localStorage for demo
-                const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
-                subscribers.push({
-                    email: email,
-                    timestamp: new Date().toISOString()
+        if (window.WebsiteConfig && window.WebsiteConfig.newsletter.mailerliteEnabled) {
+            try {
+                const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${window.WebsiteConfig.newsletter.mailerliteApiKey}`,
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        fields: {
+                            source: 'website_footer'
+                        },
+                        status: 'active'
+                    })
                 });
-                localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
-                resolve(true);
-            }, 1000);
-        });
-        
-        /* 
-        // MAILERLITE INTEGRATION TEMPLATE - Uncomment and configure when ready
-        try {
-            const response = await fetch('https://api.mailerlite.com/api/v2/subscribers', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-MailerLite-ApiKey': 'YOUR_MAILERLITE_API_KEY' // Replace with actual API key
-                },
-                body: JSON.stringify({
-                    email: email,
-                    fields: {
-                        // Add custom fields if needed
-                        source: 'website_footer'
-                    }
-                })
-            });
-            
-            if (response.ok) {
-                return true;
-            } else {
-                console.error('MailerLite API error:', response.status);
+                
+                if (response.ok) {
+                    console.log('Successfully subscribed to MailerLite:', email);
+                    return true;
+                } else {
+                    const errorData = await response.json();
+                    console.error('MailerLite API error:', response.status, errorData);
+                    return false;
+                }
+            } catch (error) {
+                console.error('MailerLite signup error:', error);
                 return false;
             }
-        } catch (error) {
-            console.error('MailerLite signup error:', error);
-            return false;
+        } else {
+            console.log('MailerLite not enabled, using demo mode');
+            return true;
         }
-        */
     }
 });
 
