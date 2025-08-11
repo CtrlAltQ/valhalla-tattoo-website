@@ -10,10 +10,10 @@
     content="tattoo, Valhalla Tattoo, Spring Hill TN, custom tattoos, Norse tattoos, professional tattoo studio">
   <meta name="author" content="Valhalla Tattoo">
   <title>Valhalla Tattoo - Professional Tattoo Studio in Spring Hill, TN</title>
-  <!-- Google Fonts for Hero Title -->
+  <!-- Google Fonts for Hero Title and Enhanced Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Bebas+Neue&family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -327,13 +327,15 @@
           <p class="response-time">We'll get back to you within 24 hours</p>
         </div>
         <form action="submit-booking.php" method="POST" class="booking-form">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
           </div>
           <div class="form-group">
             <label for="artist">Preferred Artist</label>
@@ -344,11 +346,13 @@
               <option value="jimmy">Jimmy</option>
               <option value="kason">Kason</option>
               <option value="sarah">Sarah</option>
+              <option value="heather">Heather</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Describe Your Tattoo Vision</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your tattoo idea, size, placement, style preferences, etc."></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us about your tattoo idea, size, placement, style preferences, etc." maxlength="500"></textarea>
+            <small class="char-counter">500 characters remaining</small>
           </div>
           <button type="submit" class="btn-booking">
             <span class="btn-text">Book Free Consultation</span>

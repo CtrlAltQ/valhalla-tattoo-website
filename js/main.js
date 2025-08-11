@@ -44,6 +44,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.querySelector('#book form');
     const artistSelect = document.getElementById('artist');
     
+    // Character counter for textarea
+    const messageTextarea = document.getElementById('message');
+    const charCounter = document.querySelector('.char-counter');
+    
+    if (messageTextarea && charCounter) {
+        messageTextarea.addEventListener('input', function() {
+            const remaining = 500 - this.value.length;
+            charCounter.textContent = `${remaining} characters remaining`;
+            
+            if (remaining < 50) {
+                charCounter.style.color = '#C8860D';
+            } else if (remaining < 100) {
+                charCounter.style.color = '#E8940D';
+            } else {
+                charCounter.style.color = '#888';
+            }
+        });
+    }
+    
     // Check for pre-selected artist from portfolio pages
     const selectedArtist = sessionStorage.getItem('selectedArtist');
     if (selectedArtist && artistSelect) {

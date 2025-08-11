@@ -158,8 +158,8 @@ function handleReturnNavigation() {
     const sourceArtist = sessionStorage.getItem('sourceArtist');
     
     if (navigationSource === 'artist-card' && sourceArtist) {
-        // Show return navigation indicator
-        showReturnNavigationIndicator(sourceArtist);
+        // Skip the return navigation indicator popup
+        // showReturnNavigationIndicator(sourceArtist);
         
         // Highlight the source artist card
         const sourceCard = document.querySelector(`[data-artist="${sourceArtist}"]`);

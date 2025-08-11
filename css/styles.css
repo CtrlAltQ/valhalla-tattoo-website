@@ -41,6 +41,8 @@ body {
   border: none;
   outline: none;
   overflow-x: hidden;
+  font-weight: 400;
+  letter-spacing: 0.025em;
 }
 
 /* Ensure no unwanted borders or lines appear on common elements */
@@ -94,13 +96,47 @@ body::before {
   z-index: 0;
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page load animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animations to key sections */
+.artists-section,
+.testimonials-section,
+.faq-section,
+.contact-section {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
 /* ========================================
    2. NAVIGATION & HEADER
    ======================================== */
 .main-nav {
   background: linear-gradient(135deg, #0B0B0B 0%, #1a1a1a 100%);
   padding: 0.5rem 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Oswald', sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 10;
@@ -158,8 +194,8 @@ body::before {
 }
 
 .dropdown-menu li a:hover {
-  background: rgba(191, 164, 111, 0.1);
-  color: #BFA46F;
+  background: rgba(200, 134, 13, 0.1);
+  color: #C8860D;
   transform: translateX(5px);
 }
 
@@ -171,35 +207,38 @@ nav.main-nav a {
   transition: all 0.3s ease;
   border-radius: 6px;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
 }
 
 nav.main-nav a:hover {
-  color: #BFA46F;
-  text-shadow: 0 0 8px rgba(191, 164, 111, 0.6);
+  color: #C8860D;
+  text-shadow: 0 0 8px rgba(200, 134, 13, 0.6);
   transform: translateY(-2px);
-  background: rgba(191, 164, 111, 0.1);
+  background: rgba(200, 134, 13, 0.1);
 }
 
 /* CTA Button Styling */
 .btn-cta {
-  background: linear-gradient(135deg, #BFA46F 0%, #D4B885 100%) !important;
+  background: linear-gradient(135deg, #C8860D 0%, #BFA46F 100%) !important;
   color: #0B0B0B !important;
   font-weight: 600 !important;
   padding: 0.6rem 1.25rem !important;
   border-radius: 25px !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(191, 164, 111, 0.3);
+  box-shadow: 0 4px 15px rgba(200, 134, 13, 0.4);
   transition: all 0.3s ease !important;
   border: 2px solid transparent;
 }
 
 .btn-cta:hover {
-  background: linear-gradient(135deg, #D4B885 0%, #BFA46F 100%) !important;
+  background: linear-gradient(135deg, #E8940D 0%, #C8860D 100%) !important;
   transform: translateY(-3px) !important;
-  box-shadow: 0 8px 25px rgba(191, 164, 111, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(200, 134, 13, 0.6) !important;
   text-shadow: none !important;
-  border-color: rgba(191, 164, 111, 0.3);
+  border-color: rgba(200, 134, 13, 0.3);
 }
 
 /* Logo Styling */
@@ -258,6 +297,15 @@ nav.main-nav a:hover {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+
+/* Subtle parallax effect on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-video {
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
 
 /* Hero Title Styling - Main Studio Name */
@@ -290,9 +338,9 @@ nav.main-nav a:hover {
   font-weight: 900;
   font-size: 4.5rem;
   letter-spacing: 0.3em;
-  color: #BFA46F;
+  color: #C8860D;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #D4B885 0%, #BFA46F 50%, #A68B5B 100%);
+  background: linear-gradient(135deg, #E8940D 0%, #C8860D 50%, #B8760A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -388,13 +436,21 @@ nav.main-nav a:hover {
   outline: none;
 }
 .hero h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  color: #BFA46F;
+  color: #C8860D;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 .hero p {
   font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+  opacity: 0.95;
 }
 .btn-primary, .btn-outline {
   display: inline-block;
@@ -718,10 +774,13 @@ nav.main-nav a:hover {
   text-align: center;
 }
 .artists-section h2 {
-  font-family: 'Bebas Neue Pro', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  color: #BFA46F;
+  color: #C8860D;
   margin-bottom: 1rem;
+  letter-spacing: 0.1em;
 }
 .artist-grid {
   display: grid;
@@ -731,28 +790,7 @@ nav.main-nav a:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
-.artist-card {
-  background: #1E1E1E;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 8px;
-  transition: all 100ms ease-out;
-}
-.artist-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px #A70000;
-}
-.artist-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-.artist-card h3 {
-  font-family: 'Bebas Neue Pro', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #BFA46F;
-}
+/* Artist card styles are handled in artists.css */
 .portfolio-button {
   display: inline-block;
   margin-top: 1rem;
@@ -775,10 +813,13 @@ nav.main-nav a:hover {
   text-align: center;
 }
 .gallery-section h2 {
-  font-family: 'Bebas Neue Pro', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  color: #BFA46F;
+  color: #C8860D;
   margin-bottom: 1rem;
+  letter-spacing: 0.1em;
 }
 .gallery-grid {
   display: grid;
@@ -806,17 +847,153 @@ nav.main-nav a:hover {
   margin-bottom: 1rem;
 }
 
+/* Testimonials Section */
+.testimonials-section {
+  background: #0B0B0B;
+  padding: 4rem 1rem;
+  color: #F5F3F0;
+  text-align: center;
+}
+
+.testimonials-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #C8860D;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.testimonials-section > p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(200, 134, 13, 0.1);
+  border-color: #C8860D;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 4rem;
+  color: #C8860D;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.3;
+}
+
+.testimonial-content {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #F5F3F0;
+  font-style: italic;
+  margin: 0;
+}
+
+.testimonial-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #F5F3F0;
+  font-size: 1rem;
+}
+
+.author-details {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: normal;
+}
+
+.testimonial-rating {
+  color: #C8860D;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 3rem 1rem;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
 /* FAQ */
 .faq-section {
-  background: #0B0B0B;
+  background: #121212;
   padding: 4rem 1rem;
   color: #F5F3F0;
 }
 .faq-section h2 {
   text-align: center;
   margin-bottom: 1rem;
-  font-family: 'Bebas Neue Pro', sans-serif;
-  color: #BFA46F;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #C8860D;
+  letter-spacing: 0.05em;
 }
 .faq-section > p {
   text-align: center;
@@ -832,8 +1009,12 @@ nav.main-nav a:hover {
 }
 .faq-item h4 {
   margin-bottom: 0.5rem;
-  color: #BFA46F;
-  font-family: 'Bebas Neue Pro', sans-serif;
+  color: #C8860D;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ========================================
@@ -937,11 +1118,13 @@ nav.main-nav a:hover {
 }
 
 .form-header h3 {
-  color: #BFA46F;
-  font-family: 'Bebas Neue Pro', sans-serif;
+  color: #C8860D;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .response-time {
@@ -951,19 +1134,38 @@ nav.main-nav a:hover {
   font-weight: 600;
 }
 
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Form Groups */
 .form-group {
   margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.char-counter {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+  font-size: 0.75rem;
+  color: #888;
+  transition: color 0.2s ease;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #BFA46F;
-  font-weight: 600;
+  color: #C8860D;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
 }
 
 .form-group input, 
@@ -984,8 +1186,15 @@ nav.main-nav a:hover {
 .form-group textarea:focus, 
 .form-group select:focus {
   outline: none;
-  border-color: #A70000;
-  box-shadow: 0 0 0 3px rgba(167, 0, 0, 0.1);
+  border-color: #C8860D;
+  box-shadow: 0 0 0 3px rgba(200, 134, 13, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+  border-color: #555;
   transform: translateY(-1px);
 }
 
@@ -1089,7 +1298,11 @@ nav.main-nav a:hover {
 .footer-col h4 {
   color: #F5F3F0;
   margin-bottom: 0.5rem;
-  font-family: 'Bebas Neue Pro', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
 }
 .footer-col ul {
   list-style: none;
@@ -1266,6 +1479,11 @@ nav.main-nav a:hover {
   
   .contact-grid {
     flex-direction: column;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
