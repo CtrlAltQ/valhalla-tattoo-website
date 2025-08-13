@@ -1,22 +1,37 @@
 // Main site JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Handle smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+    // Lenis smooth scrolling
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
     });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Reinitialize Lenis on content changes
+    const lenisReinit = document.querySelector('.lenis-reinit');
+    if (lenisReinit) {
+        const observer = new MutationObserver(() => {
+            lenis.resize();
+        });
+
+        observer.observe(lenisReinit, {
+            childList: true,
+            subtree: true,
+        });
+    }
     
     // Handle dropdown menu accessibility
     const dropdownTriggers = document.querySelectorAll('.dropdown > a');
