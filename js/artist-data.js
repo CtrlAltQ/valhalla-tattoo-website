@@ -174,43 +174,7 @@ const ArtistData = {
         // - tags: Array of keywords for filtering ['norse', 'blackwork', etc.]
         // - isHealed: true if photo shows healed tattoo, false if fresh
         
-        portfolio: [
-            // EXAMPLE: Copy this structure to add new photos
-            {
-                id: 1,
-                filename: 'norse-raven.jpg',
-                title: 'Odin\'s Ravens',
-                style: 'Blackwork',
-                placement: 'Back',
-                sessionTime: '8 hours',
-                description: 'Detailed Norse ravens representing Huginn and Muninn with intricate knotwork',
-                tags: ['norse', 'blackwork', 'ravens', 'mythology'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'realistic-portrait.jpg',
-                title: 'Memorial Portrait',
-                style: 'Realism',
-                placement: 'Chest',
-                sessionTime: '10 hours',
-                description: 'Photorealistic memorial portrait with incredible detail and emotion',
-                tags: ['portrait', 'realism', 'memorial'],
-                isHealed: true
-            },
-            {
-                id: 3,
-                filename: 'scar-coverup-after.jpg',
-                title: 'Scar Cover-up',
-                style: 'Blackwork',
-                placement: 'Upper Arm',
-                sessionTime: '6 hours',
-                description: 'Artistic blackwork design covering surgical scars with Norse-inspired patterns',
-                tags: ['blackwork', 'coverup', 'norse', 'healing'],
-                beforeImage: 'scar-coverup-before.jpg',
-                isHealed: true
-            }
-        ]
+        portfolio: []
     },
     
     // ========================================
@@ -229,53 +193,7 @@ const ArtistData = {
             instagram: '@micah_valhalla',
             facebook: 'micah.valhalla.tattoo'
         },
-        portfolio: [
-            {
-                id: 1,
-                filename: 'traditional-eagle.jpg',
-                title: 'Traditional Eagle',
-                style: 'Traditional',
-                placement: 'Upper Arm',
-                sessionTime: '4 hours',
-                description: 'Classic American traditional eagle with bold lines and vibrant colors',
-                tags: ['traditional', 'eagle', 'color', 'american'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'blackgrey-portrait.jpg',
-                title: 'Portrait Study',
-                style: 'Black & Grey',
-                placement: 'Forearm',
-                sessionTime: '6 hours',
-                description: 'Detailed black and grey portrait with realistic shading',
-                tags: ['portrait', 'blackgrey', 'realism'],
-                isHealed: true
-            },
-            {
-                id: 3,
-                filename: 'traditional-rose.jpg',
-                title: 'Traditional Rose',
-                style: 'Traditional',
-                placement: 'Shoulder',
-                sessionTime: '3 hours',
-                description: 'Bold traditional rose with classic color palette',
-                tags: ['traditional', 'rose', 'color', 'floral'],
-                isHealed: false
-            },
-            {
-                id: 4,
-                filename: 'coverup-before-after.jpg',
-                title: 'Cover-up Transformation',
-                style: 'Traditional',
-                placement: 'Forearm',
-                sessionTime: '8 hours',
-                description: 'Complete cover-up transformation from old tribal to bold traditional eagle',
-                tags: ['traditional', 'coverup', 'eagle', 'transformation'],
-                beforeImage: 'coverup-before.jpg',
-                isHealed: true
-            }
-        ]
+        portfolio: []
     },
     
     // ========================================
@@ -435,30 +353,7 @@ const ArtistData = {
             instagram: '@kason_fineline',
             facebook: 'kason.valhalla.tattoo'
         },
-        portfolio: [
-            {
-                id: 1,
-                filename: 'fineline-mandala.jpg',
-                title: 'Sacred Geometry',
-                style: 'Fineline',
-                placement: 'Wrist',
-                sessionTime: '3 hours',
-                description: 'Intricate fineline mandala with sacred geometry elements',
-                tags: ['fineline', 'mandala', 'geometry', 'sacred'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'minimalist-moon.jpg',
-                title: 'Lunar Phases',
-                style: 'Minimalist',
-                placement: 'Spine',
-                sessionTime: '2 hours',
-                description: 'Minimalist representation of lunar phases with delicate linework',
-                tags: ['minimalist', 'moon', 'phases', 'delicate'],
-                isHealed: false
-            }
-        ]
+        portfolio: []
     },
     
     // ========================================
@@ -477,30 +372,7 @@ const ArtistData = {
             instagram: '@sarah_watercolor',
             facebook: 'sarah.valhalla.tattoo'
         },
-        portfolio: [
-            {
-                id: 1,
-                filename: 'watercolor-butterfly.jpg',
-                title: 'Watercolor Butterfly',
-                style: 'Watercolor',
-                placement: 'Shoulder Blade',
-                sessionTime: '4 hours',
-                description: 'Delicate watercolor butterfly with flowing color transitions',
-                tags: ['watercolor', 'butterfly', 'feminine', 'color'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'botanical-wreath.jpg',
-                title: 'Botanical Wreath',
-                style: 'Illustrative',
-                placement: 'Ribcage',
-                sessionTime: '6 hours',
-                description: 'Elegant botanical wreath with detailed floral elements',
-                tags: ['botanical', 'wreath', 'floral', 'elegant'],
-                isHealed: true
-            }
-        ]
+        portfolio: []
     },
     
     // ========================================
@@ -519,30 +391,7 @@ const ArtistData = {
             instagram: '@heather_valhalla',
             facebook: 'heather.valhalla.tattoo'
         },
-        portfolio: [
-            {
-                id: 1,
-                filename: 'creative-design.jpg',
-                title: 'Creative Original Design',
-                style: 'Illustrative',
-                placement: 'Forearm',
-                sessionTime: '4 hours',
-                description: 'Custom illustrative design with unique artistic flair',
-                tags: ['illustrative', 'custom', 'creative', 'original'],
-                isHealed: true
-            },
-            {
-                id: 2,
-                filename: 'detailed-work.jpg',
-                title: 'Detailed Linework',
-                style: 'Fineline',
-                placement: 'Wrist',
-                sessionTime: '3 hours',
-                description: 'Intricate fineline work with precise detail',
-                tags: ['fineline', 'detailed', 'precise', 'delicate'],
-                isHealed: true
-            }
-        ]
+        portfolio: []
     }
 };
 
