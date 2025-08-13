@@ -174,7 +174,30 @@ const ArtistData = {
         // - tags: Array of keywords for filtering ['norse', 'blackwork', etc.]
         // - isHealed: true if photo shows healed tattoo, false if fresh
         
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'norse-raven.jpg',
+                title: 'Norse Raven',
+                style: 'Norse',
+                placement: 'Back',
+                sessionTime: '6 hours',
+                description: 'A detailed Norse raven, symbolizing wisdom and prophecy.',
+                tags: ['norse', 'raven', 'blackwork', 'mythology'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'realistic-portrait.jpg',
+                title: 'Realistic Portrait',
+                style: 'Realism',
+                placement: 'Arm',
+                sessionTime: '8 hours',
+                description: 'A photorealistic portrait capturing fine details and emotion.',
+                tags: ['realism', 'portrait', 'black & grey'],
+                isHealed: false
+            }
+        ]
     },
     
     // ========================================
@@ -193,7 +216,41 @@ const ArtistData = {
             instagram: '@micah_valhalla',
             facebook: 'micah.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'traditional-eagle.jpg',
+                title: 'Traditional Eagle',
+                style: 'Traditional',
+                placement: 'Chest',
+                sessionTime: '5 hours',
+                description: 'A classic American traditional eagle with bold lines and color.',
+                tags: ['traditional', 'eagle', 'color', 'classic'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'blackgrey-portrait.jpg',
+                title: 'Black & Grey Portrait',
+                style: 'Black & Grey',
+                placement: 'Forearm',
+                sessionTime: '7 hours',
+                description: 'A detailed black and grey portrait with smooth shading.',
+                tags: ['black & grey', 'portrait', 'realism'],
+                isHealed: false
+            },
+            {
+                id: 3,
+                filename: 'traditional-rose.jpg',
+                title: 'Traditional Rose',
+                style: 'Traditional',
+                placement: 'Hand',
+                sessionTime: '3 hours',
+                description: 'A bold and vibrant traditional rose.',
+                tags: ['traditional', 'rose', 'color', 'bold'],
+                isHealed: true
+            }
+        ]
     },
     
     // ========================================
@@ -353,7 +410,30 @@ const ArtistData = {
             instagram: '@kason_fineline',
             facebook: 'kason.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'FB_IMG_1754792270756.jpg',
+                title: 'Delicate Fineline Flower',
+                style: 'Fineline',
+                placement: 'Wrist',
+                sessionTime: '2 hours',
+                description: 'A delicate and minimal flower, showcasing precision linework.',
+                tags: ['fineline', 'minimalist', 'flower', 'delicate'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'FB_IMG_1754792255949.jpg',
+                title: 'Minimalist Geometric Design',
+                style: 'Minimalist',
+                placement: 'Forearm',
+                sessionTime: '3 hours',
+                description: 'A clean and precise geometric design with a minimalist aesthetic.',
+                tags: ['minimalist', 'geometric', 'clean', 'precise'],
+                isHealed: false
+            }
+        ]
     },
     
     // ========================================
@@ -372,7 +452,30 @@ const ArtistData = {
             instagram: '@sarah_watercolor',
             facebook: 'sarah.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'FB_IMG_1754792189094.jpg',
+                title: 'Watercolor Rose',
+                style: 'Watercolor',
+                placement: 'Shoulder',
+                sessionTime: '4 hours',
+                description: 'A vibrant watercolor rose with a soft, blended effect.',
+                tags: ['watercolor', 'rose', 'botanical', 'color'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'FB_IMG_1754792232185.jpg',
+                title: 'Elegant Botanical Illustration',
+                style: 'Illustrative',
+                placement: 'Thigh',
+                sessionTime: '5 hours',
+                description: 'An elegant botanical piece with fine lines and a delicate feel.',
+                tags: ['illustrative', 'botanical', 'elegant', 'feminine'],
+                isHealed: false
+            }
+        ]
     },
     
     // ========================================
@@ -391,7 +494,19 @@ const ArtistData = {
             instagram: '@heather_valhalla',
             facebook: 'heather.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'FB_IMG_1754792182200.jpg',
+                title: 'Creative Custom Piece',
+                style: 'Illustrative',
+                placement: 'Arm',
+                sessionTime: '5 hours',
+                description: 'A creative and unique custom design with intricate details.',
+                tags: ['creative', 'custom', 'detailed', 'illustrative'],
+                isHealed: true
+            }
+        ]
     }
 };
 
