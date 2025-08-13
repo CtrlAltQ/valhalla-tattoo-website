@@ -140,18 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle form submission
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
             // Add loading state
             const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
             
             submitButton.textContent = 'Submitting...';
             submitButton.disabled = true;
-            
-            // Re-enable button after a delay (in case of errors)
+
+            // Simulate a network request
             setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 5000);
+                const successMessage = document.querySelector('.booking-success-message');
+                if (successMessage) {
+                    bookingForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            }, 1000);
         });
     }
     
@@ -222,112 +226,16 @@ document.addEventListener('DOMContentLoaded', function() {
  * @returns {string} - Artist display name
  */
 function getArtistDisplayName(slug) {
-    const artistNames = {
-        'micah': 'Micah',
-        'pagan': 'Pagan',
-        'jimmy': 'Jimmy',
-        'kason': 'Kason',
-        'sarah': 'Sarah',
-        'heather': 'Heather'
-    };
-    return artistNames[slug] || slug;
+    if (window.ArtistManager) {
+        const artist = window.ArtistManager.getArtistBySlug(slug);
+        if (artist) {
+            return artist.name;
+        }
+    }
+    // Fallback to capitalized slug if artist not found
+    return slug.charAt(0).toUpperCase() + slug.slice(1);
 }
 
-// Add CSS for animations and enhancements
-const style = document.createElement('style');
-style.textContent = `
-    .fade-in {
-        animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Enhanced dropdown styles */
-    .dropdown-menu {
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.2s ease;
-    }
-    
-    .dropdown:hover .dropdown-menu,
-    .dropdown-menu[style*="block"] {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Loading states */
-    .hero-video,
-    .about-video-background {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-    
-    /* Form enhancements */
-    form button[type="submit"]:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-    
-    /* Artist select highlight */
-    #artist {
-        transition: all 0.3s ease;
-    }
-    
-    /* Artist preselection notice */
-    .artist-preselection-notice {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(167, 0, 0, 0.1);
-        border: 1px solid rgba(167, 0, 0, 0.3);
-        border-radius: 4px;
-        padding: 0.5rem 0.75rem;
-        margin-top: 0.5rem;
-        font-size: 0.85rem;
-        color: #F5F3F0;
-        transition: all 0.3s ease;
-    }
-    
-    .artist-preselection-notice .notice-icon {
-        color: #4CAF50;
-        font-weight: bold;
-        font-size: 1rem;
-    }
-    
-    .artist-preselection-notice .notice-text {
-        color: #ccc;
-    }
-    
-    /* Booking form highlight effect */
-    .highlight-booking-form {
-        animation: bookingFormHighlight 3s ease-out;
-    }
-    
-    @keyframes bookingFormHighlight {
-        0% {
-            box-shadow: 0 0 0 0 rgba(191, 164, 111, 0.7);
-        }
-        25% {
-            box-shadow: 0 0 0 15px rgba(191, 164, 111, 0.3);
-        }
-        50% {
-            box-shadow: 0 0 0 10px rgba(191, 164, 111, 0.2);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(191, 164, 111, 0);
-        }
-    }
-`;
-document.head.appendChild(style);
 
 // ========================================
 // NEWSLETTER SIGNUP FUNCTIONALITY

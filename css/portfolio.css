@@ -1,22 +1,6 @@
 /* Portfolio Page Styles - Consistent with Main Site Design System */
 
 /* Import main site design tokens */
-:root {
-  --primary-bg: #0B0B0B;
-  --secondary-bg: #121212;
-  --card-bg: #1E1E1E;
-  --text-primary: #F5F3F0;
-  --text-secondary: #888;
-  --accent-gold: #BFA46F;
-  --accent-red: #A70000;
-  --border-color: #333;
-  --transition-fast: 100ms ease-out;
-  --transition-medium: 300ms ease-out;
-  --border-radius: 8px;
-  --border-radius-small: 4px;
-  --max-width: 1200px;
-  --grid-gap: 2rem;
-}
 
 /* Ensure consistent body styling with main site */
 body {
@@ -178,7 +162,7 @@ body::before {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 2rem;
-  color: #ccc;
+  color: var(--light-gray);
 }
 
 .book-with-artist {
@@ -343,13 +327,13 @@ body::before {
 
 .portfolio-overlay .placement {
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--light-gray);
   margin-bottom: 0.25rem;
 }
 
 .portfolio-overlay .session-time {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--medium-gray);
 }
 
 /* Enhanced Overlay Styles */
@@ -362,8 +346,8 @@ body::before {
 
 .healed-tag {
   display: inline-block;
-  background: #4CAF50;
-  color: #F5F3F0;
+  background: var(--success);
+  color: var(--light-text);
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
   font-size: 0.7rem;
@@ -372,8 +356,8 @@ body::before {
 
 .fresh-tag {
   display: inline-block;
-  background: #FF9800;
-  color: #F5F3F0;
+  background: var(--warning);
+  color: var(--light-text);
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
   font-size: 0.7rem;
@@ -383,7 +367,7 @@ body::before {
 .coverup-tag {
   display: inline-block;
   background: #9C27B0;
-  color: #F5F3F0;
+  color: var(--light-text);
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
   font-size: 0.7rem;
@@ -412,7 +396,7 @@ body::before {
 
 .overlay-description {
   font-size: 0.8rem;
-  color: #bbb;
+  color: var(--light-gray);
   line-height: 1.3;
   margin-top: 0.5rem;
   font-style: italic;
@@ -539,9 +523,9 @@ body::before {
 
 /* Clear filters button */
 .clear-filters {
-  background: #333;
-  color: #F5F3F0;
-  border: 2px dashed #666;
+  background: var(--dark-gray);
+  color: var(--light-text);
+  border: 2px dashed var(--medium-gray);
   padding: 0.6rem 1.5rem;
   border-radius: 25px;
   font-weight: 600;
@@ -551,8 +535,8 @@ body::before {
 }
 
 .clear-filters:hover {
-  background: #A70000;
-  border-color: #A70000;
+  background: var(--accent-red);
+  border-color: var(--accent-red);
   border-style: solid;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(167, 0, 0, 0.3);
@@ -566,23 +550,23 @@ body::before {
 /* Empty State */
 .portfolio-empty {
   text-align: center;
-  color: #888;
+  color: var(--medium-gray);
   font-size: 1.1rem;
   padding: 3rem;
-  background: #1E1E1E;
+  background: var(--card-bg);
   border-radius: 8px;
-  border: 2px dashed #333;
+  border: 2px dashed var(--dark-gray);
   grid-column: 1 / -1;
 }
 
 .portfolio-placeholder {
   text-align: center;
-  color: #888;
+  color: var(--medium-gray);
   font-size: 1.1rem;
   padding: 3rem;
-  background: #1E1E1E;
+  background: var(--card-bg);
   border-radius: 8px;
-  border: 2px dashed #333;
+  border: 2px dashed var(--dark-gray);
   grid-column: 1 / -1;
 }
 
@@ -1427,6 +1411,32 @@ body::before {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+/* Styles for empty portfolio message */
+.portfolio-empty-message {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #1a1a1a;
+    border-radius: 8px;
+    margin: 2rem;
+    border: 1px solid #333;
+}
+
+.portfolio-empty-message p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.portfolio-empty-message a {
+    color: #BFA46F;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.portfolio-empty-message a:hover {
+    color: #D4B885;
 }
 
 /* Portfolio Minimal Message */
