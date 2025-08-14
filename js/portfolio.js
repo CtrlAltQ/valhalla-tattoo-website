@@ -21,7 +21,17 @@ function getCurrentArtistSlug() {
 
 function renderPortfolioGallery(artistData) {
     const portfolioGrid = document.querySelector('.portfolio-grid');
-    if (!portfolioGrid || !artistData.portfolio) return;
+    if (!portfolioGrid) return;
+
+    if (!artistData.portfolio || artistData.portfolio.length === 0) {
+        portfolioGrid.innerHTML = `
+            <div class="portfolio-empty-message">
+                <p>Check back soon to see ${artistData.name}'s latest work.</p>
+                <p>In the meantime, you can see more on <a href="${artistData.socialMedia.instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
+            </div>
+        `;
+        return;
+    }
 
     portfolioGrid.innerHTML = '';
 

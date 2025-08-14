@@ -683,7 +683,30 @@ const ArtistData = {
             instagram: '@sarah_watercolor',
             facebook: 'sarah.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'FB_IMG_1754792189094.jpg',
+                title: 'Watercolor Rose',
+                style: 'Watercolor',
+                placement: 'Shoulder',
+                sessionTime: '4 hours',
+                description: 'A vibrant watercolor rose with a soft, blended effect.',
+                tags: ['watercolor', 'rose', 'botanical', 'color'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'FB_IMG_1754792232185.jpg',
+                title: 'Elegant Botanical Illustration',
+                style: 'Illustrative',
+                placement: 'Thigh',
+                sessionTime: '5 hours',
+                description: 'An elegant botanical piece with fine lines and a delicate feel.',
+                tags: ['illustrative', 'botanical', 'elegant', 'feminine'],
+                isHealed: false
+            }
+        ]
     },
     
     // ========================================
@@ -702,7 +725,19 @@ const ArtistData = {
             instagram: '@heather_valhalla',
             facebook: 'heather.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'FB_IMG_1754792182200.jpg',
+                title: 'Creative Custom Piece',
+                style: 'Illustrative',
+                placement: 'Arm',
+                sessionTime: '5 hours',
+                description: 'A creative and unique custom design with intricate details.',
+                tags: ['creative', 'custom', 'detailed', 'illustrative'],
+                isHealed: true
+            }
+        ]
     }
 };
 
