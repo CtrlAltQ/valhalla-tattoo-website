@@ -174,7 +174,107 @@ const ArtistData = {
         // - tags: Array of keywords for filtering ['norse', 'blackwork', etc.]
         // - isHealed: true if photo shows healed tattoo, false if fresh
         
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'norse-raven.jpg',
+                title: 'Norse Raven',
+                style: 'Norse',
+                placement: 'Shoulder',
+                sessionTime: '6 hours',
+                description: 'Powerful Norse raven with intricate blackwork details',
+                tags: ['norse', 'raven', 'blackwork', 'mythology'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'realistic-portrait.jpg',
+                title: 'Realistic Portrait',
+                style: 'Realism',
+                placement: 'Forearm',
+                sessionTime: '8 hours',
+                description: 'Photorealistic portrait with incredible detail and shading',
+                tags: ['realism', 'portrait', 'detailed', 'photorealistic'],
+                isHealed: true
+            },
+            {
+                id: 3,
+                filename: '20250729_145017.jpg',
+                title: 'Norse Blackwork Design',
+                style: 'Blackwork',
+                placement: 'Back',
+                sessionTime: '10 hours',
+                description: 'Large Norse-inspired blackwork piece with traditional symbolism',
+                tags: ['norse', 'blackwork', 'large', 'traditional'],
+                isHealed: true
+            },
+            {
+                id: 4,
+                filename: 'IMG_3111.jpg',
+                title: 'Celtic Knot Detail',
+                style: 'Blackwork',
+                placement: 'Wrist',
+                sessionTime: '3 hours',
+                description: 'Intricate Celtic knot work with precise linework',
+                tags: ['celtic', 'blackwork', 'knot', 'intricate'],
+                isHealed: true
+            },
+            {
+                id: 5,
+                filename: 'IMG_3129.jpg',
+                title: 'Viking Symbol',
+                style: 'Norse',
+                placement: 'Chest',
+                sessionTime: '5 hours',
+                description: 'Traditional Viking symbol with bold blackwork execution',
+                tags: ['viking', 'norse', 'symbol', 'blackwork'],
+                isHealed: true
+            },
+            {
+                id: 6,
+                filename: 'image0(1).jpeg',
+                title: 'Realistic Animal Portrait',
+                style: 'Realism',
+                placement: 'Thigh',
+                sessionTime: '7 hours',
+                description: 'Detailed animal portrait showcasing realistic technique',
+                tags: ['realism', 'animal', 'portrait', 'detailed'],
+                isHealed: true
+            },
+            {
+                id: 7,
+                filename: 'image0(3).jpeg',
+                title: 'Norse Mythology Scene',
+                style: 'Norse',
+                placement: 'Upper Arm',
+                sessionTime: '9 hours',
+                description: 'Complex Norse mythology scene with multiple elements',
+                tags: ['norse', 'mythology', 'complex', 'scene'],
+                isHealed: true
+            },
+            {
+                id: 8,
+                filename: 'image1(2).jpeg',
+                title: 'Blackwork Geometric',
+                style: 'Blackwork',
+                placement: 'Forearm',
+                sessionTime: '4 hours',
+                description: 'Geometric blackwork design with precise patterns',
+                tags: ['blackwork', 'geometric', 'patterns', 'precise'],
+                isHealed: true
+            },
+            {
+                id: 9,
+                filename: 'image1.jpeg',
+                title: 'Viking Warrior',
+                style: 'Realism',
+                placement: 'Calf',
+                sessionTime: '8 hours',
+                description: 'Realistic Viking warrior with detailed armor and features',
+                tags: ['viking', 'warrior', 'realism', 'detailed'],
+                isHealed: true
+            }
+        ]
     },
     
     // ========================================
@@ -193,7 +293,173 @@ const ArtistData = {
             instagram: '@micah_valhalla',
             facebook: 'micah.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'blackgrey-portrait.jpg',
+                title: 'Black & Grey Portrait',
+                style: 'Black & Grey',
+                placement: 'Forearm',
+                sessionTime: '6 hours',
+                description: 'Detailed black and grey portrait showcasing realistic shading',
+                tags: ['portrait', 'black-grey', 'realistic', 'detailed'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'traditional-eagle.jpg',
+                title: 'Traditional Eagle',
+                style: 'Traditional',
+                placement: 'Chest',
+                sessionTime: '4 hours',
+                description: 'Classic American traditional eagle with bold lines',
+                tags: ['traditional', 'eagle', 'bold', 'classic'],
+                isHealed: true
+            },
+            {
+                id: 3,
+                filename: 'traditional-rose.jpg',
+                title: 'Traditional Rose',
+                style: 'Traditional',
+                placement: 'Shoulder',
+                sessionTime: '3 hours',
+                description: 'Vibrant traditional rose with classic styling',
+                tags: ['traditional', 'rose', 'vibrant', 'classic'],
+                isHealed: true
+            },
+            {
+                id: 4,
+                filename: 'Messenger_creation_263C33BD-0726-46E3-8FE0-E7BD0C494296.jpeg',
+                title: 'Custom Traditional Piece',
+                style: 'Traditional',
+                placement: 'Upper Arm',
+                sessionTime: '5 hours',
+                description: 'Bold traditional tattoo with custom design elements',
+                tags: ['traditional', 'custom', 'bold', 'detailed'],
+                isHealed: true
+            },
+            {
+                id: 5,
+                filename: 'Messenger_creation_3101BC6C-B9BD-4C12-AEF6-9B1667A9C184.jpeg',
+                title: 'Black & Grey Shading',
+                style: 'Black & Grey',
+                placement: 'Leg',
+                sessionTime: '4 hours',
+                description: 'Expert black and grey work with smooth shading',
+                tags: ['black-grey', 'shading', 'smooth', 'expert'],
+                isHealed: true
+            },
+            {
+                id: 6,
+                filename: 'Messenger_creation_4C1CC18F-1D13-4E87-8BCF-23C95B16FC2A.jpeg',
+                title: 'Traditional Design',
+                style: 'Traditional',
+                placement: 'Forearm',
+                sessionTime: '3.5 hours',
+                description: 'Clean traditional tattoo with bold color work',
+                tags: ['traditional', 'clean', 'bold', 'colorwork'],
+                isHealed: true
+            },
+            {
+                id: 7,
+                filename: 'Messenger_creation_51D6B834-A69A-4429-BD20-FDFF80B50B83.jpeg',
+                title: 'Detailed Black Work',
+                style: 'Black & Grey',
+                placement: 'Back',
+                sessionTime: '7 hours',
+                description: 'Intricate black and grey piece with fine detail',
+                tags: ['black-grey', 'detailed', 'intricate', 'large'],
+                isHealed: true
+            },
+            {
+                id: 8,
+                filename: 'Messenger_creation_7332848750778413037.jpeg',
+                title: 'Traditional Flash',
+                style: 'Traditional',
+                placement: 'Calf',
+                sessionTime: '2.5 hours',
+                description: 'Classic flash design with traditional execution',
+                tags: ['traditional', 'flash', 'classic', 'small'],
+                isHealed: true
+            },
+            {
+                id: 9,
+                filename: 'Messenger_creation_7332848750782917803.jpeg',
+                title: 'Black & Grey Portrait',
+                style: 'Black & Grey',
+                placement: 'Ribcage',
+                sessionTime: '6 hours',
+                description: 'Realistic portrait work in black and grey',
+                tags: ['portrait', 'black-grey', 'realistic', 'detailed'],
+                isHealed: true
+            },
+            {
+                id: 10,
+                filename: 'Messenger_creation_7332848750783349603.jpeg',
+                title: 'Traditional Anchor',
+                style: 'Traditional',
+                placement: 'Wrist',
+                sessionTime: '2 hours',
+                description: 'Small traditional anchor with clean lines',
+                tags: ['traditional', 'anchor', 'small', 'clean'],
+                isHealed: true
+            },
+            {
+                id: 11,
+                filename: 'Messenger_creation_7332848750784236948.jpeg',
+                title: 'Grey Scale Work',
+                style: 'Black & Grey',
+                placement: 'Thigh',
+                sessionTime: '5 hours',
+                description: 'Stunning grey scale tattoo with depth',
+                tags: ['black-grey', 'greyscale', 'depth', 'stunning'],
+                isHealed: true
+            },
+            {
+                id: 12,
+                filename: 'Messenger_creation_CCAB9748-CB96-4E28-B528-D89253D97CB4.jpeg',
+                title: 'Traditional Banner',
+                style: 'Traditional',
+                placement: 'Arm',
+                sessionTime: '3 hours',
+                description: 'Bold traditional banner with script lettering',
+                tags: ['traditional', 'banner', 'script', 'bold'],
+                isHealed: true
+            },
+            {
+                id: 13,
+                filename: 'Messenger_creation_D59A6904-6065-4078-A0AE-B8889D4DB6DD.jpeg',
+                title: 'Black & Grey Realism',
+                style: 'Black & Grey',
+                placement: 'Shoulder',
+                sessionTime: '6 hours',
+                description: 'Photorealistic black and grey tattoo',
+                tags: ['black-grey', 'realism', 'photorealistic', 'detailed'],
+                isHealed: true
+            },
+            {
+                id: 14,
+                filename: 'Messenger_creation_F51EDE92-0E39-4170-B60F-C9A4571A860D.jpeg',
+                title: 'Traditional Snake',
+                style: 'Traditional',
+                placement: 'Forearm',
+                sessionTime: '4 hours',
+                description: 'Classic traditional snake with bold shading',
+                tags: ['traditional', 'snake', 'bold', 'classic'],
+                isHealed: true
+            },
+            {
+                id: 15,
+                filename: 'Screenshot_20250529_045831_Facebook.jpg',
+                title: 'Custom Black & Grey',
+                style: 'Black & Grey',
+                placement: 'Chest',
+                sessionTime: '8 hours',
+                description: 'Large custom black and grey piece',
+                tags: ['black-grey', 'custom', 'large', 'detailed'],
+                isHealed: true
+            }
+        ]
     },
     
     // ========================================
@@ -353,7 +619,52 @@ const ArtistData = {
             instagram: '@kason_fineline',
             facebook: 'kason.valhalla.tattoo'
         },
-        portfolio: []
+        portfolio: [
+            {
+                id: 1,
+                filename: 'IMG_20250610_143859.heic',
+                title: 'Delicate Fineline Design',
+                style: 'Fineline',
+                placement: 'Wrist',
+                sessionTime: '2 hours',
+                description: 'Precise fineline tattoo showcasing minimal elegance',
+                tags: ['fineline', 'minimal', 'delicate', 'precise'],
+                isHealed: true
+            },
+            {
+                id: 2,
+                filename: 'IMG_20250610_143911.heic',
+                title: 'Minimalist Symbol',
+                style: 'Minimalist',
+                placement: 'Forearm',
+                sessionTime: '1.5 hours',
+                description: 'Clean minimalist design with meaningful symbolism',
+                tags: ['minimalist', 'symbolic', 'clean', 'meaningful'],
+                isHealed: true
+            },
+            {
+                id: 3,
+                filename: 'IMG_20250610_143914.heic',
+                title: 'Fine Line Art',
+                style: 'Fineline',
+                placement: 'Ankle',
+                sessionTime: '2.5 hours',
+                description: 'Intricate fineline work with ethereal quality',
+                tags: ['fineline', 'intricate', 'ethereal', 'artistic'],
+                isHealed: true
+            },
+            {
+                id: 4,
+                filename: 'IMG_20250610_143946.heic',
+                title: 'Minimal Composition',
+                style: 'Minimalist',
+                placement: 'Behind Ear',
+                sessionTime: '1 hour',
+                description: 'Subtle minimal tattoo with perfect placement',
+                tags: ['minimalist', 'subtle', 'placement', 'small'],
+                isHealed: true
+            }
+        ]
     },
     
     // ========================================
